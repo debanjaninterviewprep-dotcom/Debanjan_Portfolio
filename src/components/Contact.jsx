@@ -12,10 +12,10 @@ export default function Contact() {
       <div className="card p-8 grid sm:grid-cols-3 gap-6 text-center">
         <a
           href={`mailto:${profile.email}`}
-          className="group rounded-xl p-4 hover:bg-slate-50 transition-colors"
+          className="group rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
         >
-          <p className="text-xs uppercase tracking-wider text-slate-500">Email</p>
-          <p className="mt-1 font-medium text-slate-900 group-hover:text-brand-700 break-all">
+          <p className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">Email</p>
+          <p className="mt-1 font-medium text-slate-900 dark:text-white group-hover:text-brand-700 dark:group-hover:text-brand-400 break-all">
             {profile.email}
           </p>
         </a>
@@ -23,22 +23,22 @@ export default function Contact() {
           href={profile.linkedin}
           target="_blank"
           rel="noreferrer"
-          className="group rounded-xl p-4 hover:bg-slate-50 transition-colors"
+          className="group rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
         >
-          <p className="text-xs uppercase tracking-wider text-slate-500">LinkedIn</p>
-          <p className="mt-1 font-medium text-slate-900 group-hover:text-brand-700">
-            /in/debanjan-mukherjee
+          <p className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">LinkedIn</p>
+          <p className="mt-1 font-medium text-slate-900 dark:text-white group-hover:text-brand-700 dark:group-hover:text-brand-400 break-all">
+            /in/debanjan-mukherjee-773a3221a
           </p>
         </a>
         <a
           href={profile.github}
           target="_blank"
           rel="noreferrer"
-          className="group rounded-xl p-4 hover:bg-slate-50 transition-colors"
+          className="group rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
         >
-          <p className="text-xs uppercase tracking-wider text-slate-500">GitHub</p>
-          <p className="mt-1 font-medium text-slate-900 group-hover:text-brand-700">
-            @debanjan-mukherjee
+          <p className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">GitHub</p>
+          <p className="mt-1 font-medium text-slate-900 dark:text-white group-hover:text-brand-700 dark:group-hover:text-brand-400 break-all">
+            @debanjaninterviewprep-dotcom
           </p>
         </a>
       </div>

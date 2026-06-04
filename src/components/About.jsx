@@ -6,39 +6,46 @@ export default function About() {
     <Section id="about" eyebrow="About" title="A bit about me">
       <div className="grid md:grid-cols-3 gap-6">
         <div className="md:col-span-2 card p-7">
-          <p className="text-slate-700 leading-relaxed">
-            I'm a Full Stack Software Developer at <strong>Wipro</strong> with hands-on experience
-            building enterprise-grade applications using <strong>.NET, C#, Web API,</strong> and{' '}
-            <strong>Angular</strong>. I enjoy taking ownership end-to-end — from understanding the
-            business need, to designing the solution, shipping it reliably, and supporting it in
-            production.
+          <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+            I'm a Full Stack Software Developer at <strong>Wipro</strong>, building enterprise-grade
+            applications on a <strong>.NET, C#, Web API,</strong> and <strong>Angular</strong> stack.
+            I take ownership end-to-end — from architecture and implementation to performance,
+            scalability, and production support — and care deeply about delivering software that is
+            reliable, maintainable, and accurate.
           </p>
-          <p className="mt-4 text-slate-700 leading-relaxed">
-            I've led delivery on the <strong>INPAT</strong> application, automated a{' '}
-            <strong>10,200+ record migration</strong> with <strong>zero downtime</strong>, and
-            mentored teams through structured Knowledge Transfer. Outside delivery work, I'm
-            actively upskilling in <strong>React</strong> to broaden my modern frontend toolkit —
-            this site is part of that journey.
+          <p className="mt-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+            I work in an <strong>AI-augmented</strong> way — leveraging
+            <strong> GitHub Copilot</strong>, <strong>ChatGPT</strong>, <strong>Gemini</strong>, and
+            <strong> Claude</strong> across nearly every daily task. Integrating AI deeply into my
+            workflow lets me ship faster, reduce repetitive effort by up to <strong>~90%</strong>,
+            and reinvest that time into design, code quality, and business impact — making me a
+            more leveraged engineer for the team.
+          </p>
+          <p className="mt-4 text-slate-700 dark:text-slate-300 leading-relaxed">
+            Alongside core engineering work, I'm actively expanding into{' '}
+            <strong>low-code and AI-assisted platforms</strong> — <strong>Power Apps</strong>,{' '}
+            <strong>Power Platform</strong>, and <strong>Copilot Studio</strong> — to combine
+            system-level development with modern platform tools and deliver business value faster.
           </p>
         </div>
 
         <div className="card p-7">
-          <h3 className="font-semibold text-slate-900">Quick facts</h3>
-          <ul className="mt-4 space-y-3 text-sm text-slate-700">
+          <h3 className="font-semibold text-slate-900 dark:text-white">Quick facts</h3>
+          <ul className="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-300">
             <li>
-              <span className="text-slate-500">Role:</span> {profile.role}
+              <span className="text-slate-500 dark:text-slate-400">Role:</span> {profile.role}
             </li>
             <li>
-              <span className="text-slate-500">Company:</span> Wipro
+              <span className="text-slate-500 dark:text-slate-400">Company:</span> Wipro
             </li>
             <li>
-              <span className="text-slate-500">Stack:</span> .NET • C# • Angular • Web API
+              <span className="text-slate-500 dark:text-slate-400">Stack:</span> .NET • C# • Angular • Web API
             </li>
             <li>
-              <span className="text-slate-500">Learning:</span> React
+              <span className="text-slate-500 dark:text-slate-400">Learning:</span> React, Power Apps, Power Platform, Copilot Studio
             </li>
             <li>
-              <span className="text-slate-500">Location:</span> {profile.location}
+              <span className="text-slate-500 dark:text-slate-400">Location:</span> {profile.location}
             </li>
           </ul>
         </div>

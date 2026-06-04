@@ -12,11 +12,11 @@ export default function Projects() {
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((p) => (
           <article key={p.title} className="card p-6 flex flex-col">
-            <h3 className="text-lg font-semibold text-slate-900">{p.title}</h3>
-            <p className="mt-2 text-slate-700">{p.description}</p>
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{p.title}</h3>
+            <p className="mt-2 text-slate-700 dark:text-slate-300">{p.description}</p>
 
             {p.achievements?.length > 0 && (
-              <ul className="mt-4 space-y-1.5 text-sm text-slate-700 list-disc pl-5">
+              <ul className="mt-4 space-y-1.5 text-sm text-slate-700 dark:text-slate-300 list-disc pl-5">
                 {p.achievements.map((a, i) => (
                   <li key={i}>{a}</li>
                 ))}
@@ -30,6 +30,20 @@ export default function Projects() {
                 </span>
               ))}
             </div>
+
+            {p.link && (
+              <div className="mt-5">
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 dark:text-brand-400 hover:underline"
+                >
+                  View on GitHub
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            )}
           </article>
         ))}
       </div>

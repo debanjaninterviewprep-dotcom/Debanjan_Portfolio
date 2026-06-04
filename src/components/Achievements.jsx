@@ -13,13 +13,13 @@ export default function Achievements() {
         {achievements.map((a) => (
           <div key={a.title} className="card p-6">
             <div className="flex items-start gap-4">
-              <div className="shrink-0 w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-2xl ring-1 ring-brand-100">
+              <div className="shrink-0 w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 flex items-center justify-center text-2xl ring-1 ring-brand-100 dark:ring-brand-900">
                 ★
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-900">{a.title}</h3>
-                <p className="text-sm text-brand-700 font-medium">{a.issuer}</p>
-                <p className="mt-2 text-slate-700">{a.description}</p>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{a.title}</h3>
+                <p className="text-sm text-brand-700 dark:text-brand-400 font-medium">{a.issuer}</p>
+                <p className="mt-2 text-slate-700 dark:text-slate-300">{a.description}</p>
               </div>
             </div>
           </div>

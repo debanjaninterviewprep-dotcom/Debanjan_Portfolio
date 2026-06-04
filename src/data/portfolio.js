@@ -1,23 +1,25 @@
-// Centralized data sourced from the resume. Update placeholders as needed.
+// Centralized resume content. Update this file to change site copy.
 export const profile = {
   name: 'Debanjan Mukherjee',
   role: 'Full Stack Software Developer',
-  tagline: '.NET + Angular • Building scalable, reliable enterprise apps',
+  tagline: '.NET • C# • Angular • Web API — building scalable, secure enterprise applications.',
   intro:
-    "I'm a Full Stack Developer at Wipro specializing in .NET, C#, Angular, and Web API. I lead delivery on enterprise applications, design zero-downtime data migrations, and mentor teams through structured KT. Currently upskilling in React to expand my modern frontend toolkit.",
+    "I'm a Full Stack Software Developer at Wipro, focused on engineering reliable enterprise applications on a .NET and Angular stack. I work in an AI-augmented way — leveraging tools like GitHub Copilot, ChatGPT, Gemini, and Claude across nearly every daily task to dramatically accelerate delivery and free up time for higher-value engineering. I'm also actively expanding into low-code and AI platforms (Power Apps, Power Platform, Copilot Studio) to deliver business value even faster.",
   location: 'India',
-  email: 'debanjan.mukherjee@example.com', // placeholder
-  linkedin: 'https://www.linkedin.com/in/debanjan-mukherjee/', // placeholder
-  github: 'https://github.com/debanjan-mukherjee', // placeholder
-  cvUrl: '/cv.html', // served from public/ — replace with PDF if available
+  email: 'mukherjeedebanjan051@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/debanjan-mukherjee-773a3221a',
+  github: 'https://github.com/debanjaninterviewprep-dotcom',
+  cvUrl: '/cv.html',
 };
 
 export const skills = {
-  Frontend: ['Angular', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'React (learning)'],
+  Frontend: ['Angular', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3'],
   Backend: ['.NET', 'C#', 'ASP.NET Web API', 'Entity Framework', 'REST APIs'],
   Databases: ['SQL Server', 'T-SQL'],
   Tools: ['Git', 'Azure DevOps', 'Visual Studio', 'VS Code', 'Postman', 'JIRA'],
+  'AI Tools': ['GitHub Copilot', 'ChatGPT', 'Gemini', 'Claude'],
   Languages: ['C#', 'TypeScript', 'JavaScript', 'SQL'],
+  Learning: ['React', 'Power Apps', 'Power Platform', 'Copilot Studio', 'Power Automate'],
 };
 
 export const experience = [
@@ -27,40 +29,68 @@ export const experience = [
     duration: '2022 — Present',
     location: 'India',
     points: [
-      'Lead developer on the INPAT application — own end-to-end design, development, and delivery on a .NET + Angular stack.',
-      'Automated migration of 10,200+ inventory records with a zero-downtime cutover strategy.',
-      'Delivered structured Knowledge Transfer (KT) to the CTS team; received positive feedback for clarity and depth.',
-      'Collaborated with stakeholders to translate business requirements into scalable technical solutions.',
+      'Lead developer on the INPAT enterprise application, working alongside the solution architect to drive end-to-end design, development, and delivery on a .NET and Angular stack.',
+      'Drove backend modernization to improve maintainability, performance, and long-term scalability while ensuring application stability.',
+      'Supported the operations team by resolving production issues with minimal business disruption.',
+      'Delivered two high-impact initiatives with 100% accuracy and zero downtime.',
+      'Practice AI-augmented development — use GitHub Copilot, ChatGPT, Gemini, and Claude across nearly every daily task to accelerate delivery, reduce manual effort by up to ~90%, and focus engineering time on design, quality, and impact.',
+      'Recognized with the Europe Excellence Award (Rising Star) for ownership, delivery quality, and impact on the INPAT application.',
     ],
   },
-  // Add earlier roles here if available
 ];
 
 export const projects = [
   {
     title: 'INPAT — Enterprise Inventory Platform',
     description:
-      'Lead developer on a critical enterprise inventory and tracking application. Drove architecture decisions, feature delivery, and production support.',
+      'Critical enterprise inventory and scheduling platform delivered on .NET, Web API, Angular, and SQL Server. Owned end-to-end as lead developer, including architecture decisions, feature delivery, and production support.',
     tech: ['.NET', 'C#', 'Web API', 'Angular', 'SQL Server'],
     achievements: [
-      'Migrated 10,200+ inventory records with zero downtime',
-      'Reduced manual operational effort through automation',
-      'Owned end-to-end delivery as lead developer',
+      'Drove backend modernization for improved maintainability and performance.',
+      'Maintained application stability while delivering new functionality.',
+      'Resolved cross-team dependencies to accelerate delivery cycles.',
     ],
   },
   {
-    title: 'Knowledge Transfer Program — CTS Handover',
+    title: 'Automated Migration Initiative',
     description:
-      'Designed and delivered a structured KT program covering architecture, codebase walkthroughs, and operational runbooks.',
-    tech: ['Documentation', 'Architecture', 'Mentoring'],
-    achievements: ['Positive feedback from CTS team', 'Smooth handover with zero blocker escalations'],
+      'Designed and implemented a .NET Web API–based automation to migrate inventory host and schedule records from Ansible Tower to AAP, fully validated across Dev and QA before production cutover.',
+    tech: ['.NET', 'Web API', 'C#', 'Ansible Tower', 'AAP'],
+    achievements: [
+      'Migrated ~10,200 host and schedule records with 100% accuracy.',
+      'Executed an 11-hour production run with zero downtime and no business impact.',
+      'Fully automated and tested across Dev and QA environments.',
+    ],
+  },
+  {
+    title: 'Angular Upgrade Initiative',
+    description:
+      'Led the upgrade of the INPAT frontend from Angular 6 to Angular 18 within a one-month window, including extensive refactoring and dependency realignment.',
+    tech: ['Angular 18', 'TypeScript', 'RxJS'],
+    achievements: [
+      'Completed end-to-end upgrade in one month.',
+      'Performed extensive refactoring and dependency realignment.',
+      'Validated across environments, resulting in a more secure and scalable frontend.',
+    ],
+  },
+  {
+    title: '.NET Full Stack Course',
+    description:
+      'Self-designed, AI-augmented .NET full stack learning track — a curated, hands-on curriculum covering C#, ASP.NET Web API, Entity Framework, and modern frontend integration. Built and refined with the help of GitHub Copilot, ChatGPT, Gemini, and Claude.',
+    tech: ['.NET', 'C#', 'ASP.NET Web API', 'Entity Framework', 'AI-augmented'],
+    link: 'https://github.com/debanjaninterviewprep-dotcom/DotNet-Full-Stack-Course',
+    achievements: [
+      'Designed end-to-end with AI-assisted research and content generation.',
+      'Demonstrates AI-integrated coding workflow used in daily engineering work.',
+      'Open-sourced on GitHub for ongoing iteration.',
+    ],
   },
   {
     title: 'React Portfolio (this site)',
     description:
       'A modern responsive portfolio built with React, Vite, and Tailwind CSS as part of actively upskilling on modern frontend tooling.',
     tech: ['React', 'Vite', 'Tailwind CSS'],
-    achievements: ['Fully responsive', 'Deployed on GitHub Pages'],
+    achievements: ['Fully responsive with light and dark modes.', 'Deployed via GitHub Actions to GitHub Pages.'],
   },
 ];
 
@@ -69,13 +99,13 @@ export const education = [
     degree: 'M.Tech (Software Engineering)',
     school: 'BITS Pilani — Work Integrated Learning Program (WILP)',
     duration: 'In progress',
-    details: 'Pursuing M.Tech alongside full-time work at Wipro.',
+    details: 'Pursuing M.Tech alongside full-time engineering work at Wipro.',
   },
   {
-    degree: 'B.Tech',
-    school: 'Undergraduate Engineering', // placeholder
+    degree: 'BCA (Bachelor of Computer Applications)',
+    school: 'Techno India Hooghly College',
     duration: '—',
-    details: 'Foundational coursework in computer science and engineering.',
+    details: 'Foundational coursework in computer science, software development, and database systems.',
   },
 ];
 
@@ -84,6 +114,6 @@ export const achievements = [
     title: 'Europe Excellence Award — Rising Star',
     issuer: 'Wipro',
     description:
-      'Recognized for outstanding contribution and impact on the European business unit as an emerging high performer.',
+      'Recognized for outstanding ownership, delivery quality, and measurable impact on the INPAT application across the European business unit.',
   },
 ];

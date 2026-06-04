@@ -12,7 +12,7 @@ export default function Skills() {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {Object.entries(skills).map(([category, items]) => (
           <div key={category} className="card p-6">
-            <h3 className="font-semibold text-slate-900">{category}</h3>
+            <h3 className="font-semibold text-slate-900 dark:text-white">{category}</h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {items.map((item) => (
                 <span key={item} className="badge">
