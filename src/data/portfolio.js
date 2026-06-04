@@ -9,7 +9,9 @@ export const profile = {
   email: 'mukherjeedebanjan051@gmail.com',
   linkedin: 'https://www.linkedin.com/in/debanjan-mukherjee-773a3221a',
   github: 'https://github.com/debanjaninterviewprep-dotcom',
-  cvUrl: '/cv.html',
+  // Vite prepends BASE_URL automatically so this works locally ('/') and
+  // on GitHub Pages ('/Debanjan_Portfolio/').
+  cvUrl: `${import.meta.env.BASE_URL}cv.html`,
 };
 
 export const skills = {
