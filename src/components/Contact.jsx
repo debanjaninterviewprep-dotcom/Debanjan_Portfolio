@@ -9,7 +9,7 @@ export default function Contact() {
       title="Let's connect"
       subtitle="Open to interesting roles, collaborations, and conversations."
     >
-      <div className="card p-8 grid sm:grid-cols-3 gap-6 text-center">
+      <div className="card p-8 grid sm:grid-cols-3 gap-6 text-center reveal">
         <a
           href={`mailto:${profile.email}`}
           className="group rounded-xl p-4 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"

@@ -12,15 +12,17 @@ export const profile = {
   // Vite prepends BASE_URL automatically so this works locally ('/') and
   // on GitHub Pages ('/Debanjan_Portfolio/').
   cvUrl: `${import.meta.env.BASE_URL}cv.html`,
+  photoUrl: `${import.meta.env.BASE_URL}profile.jpg`,
 };
 
 export const skills = {
   Frontend: ['Angular', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3'],
   Backend: ['.NET', 'C#', 'ASP.NET Web API', 'Entity Framework', 'REST APIs'],
   Databases: ['SQL Server', 'T-SQL'],
+  Scripting: ['PowerShell', 'Bash'],
   Tools: ['Git', 'Azure DevOps', 'Visual Studio', 'VS Code', 'Postman', 'JIRA'],
   'AI Tools': ['GitHub Copilot', 'ChatGPT', 'Gemini', 'Claude'],
-  Languages: ['C#', 'TypeScript', 'JavaScript', 'SQL'],
+  Languages: ['C#', 'TypeScript', 'JavaScript', 'SQL', 'PowerShell'],
   Learning: ['React', 'Power Apps', 'Power Platform', 'Copilot Studio', 'Power Automate'],
 };
 

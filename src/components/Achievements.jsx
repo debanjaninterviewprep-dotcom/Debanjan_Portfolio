@@ -10,8 +10,12 @@ export default function Achievements() {
       subtitle="Awards and milestones I'm proud of."
     >
       <div className="grid md:grid-cols-2 gap-6">
-        {achievements.map((a) => (
-          <div key={a.title} className="card p-6">
+        {achievements.map((a, idx) => (
+          <div
+            key={a.title}
+            className="card p-6 reveal"
+            style={{ transitionDelay: `${idx * 100}ms` }}
+          >
             <div className="flex items-start gap-4">
               <div className="shrink-0 w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 flex items-center justify-center text-2xl ring-1 ring-brand-100 dark:ring-brand-900">
                 ★

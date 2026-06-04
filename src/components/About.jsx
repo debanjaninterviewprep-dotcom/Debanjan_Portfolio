@@ -5,7 +5,10 @@ export default function About() {
   return (
     <Section id="about" eyebrow="About" title="A bit about me">
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 card p-7">
+        <div
+          className="md:col-span-2 card p-7 reveal"
+          style={{ transitionDelay: '0ms' }}
+        >
           <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
             I'm a Full Stack Software Developer at <strong>Wipro</strong>, building enterprise-grade
             applications on a <strong>.NET, C#, Web API,</strong> and <strong>Angular</strong> stack.
@@ -29,7 +32,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="card p-7">
+        <div className="card p-7 reveal" style={{ transitionDelay: '120ms' }}>
           <h3 className="font-semibold text-slate-900 dark:text-white">Quick facts</h3>
           <ul className="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-300">
             <li>

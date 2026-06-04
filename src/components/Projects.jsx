@@ -10,8 +10,12 @@ export default function Projects() {
       subtitle="A few projects that highlight the kind of problems I enjoy solving."
     >
       <div className="grid md:grid-cols-2 gap-6">
-        {projects.map((p) => (
-          <article key={p.title} className="card p-6 flex flex-col">
+        {projects.map((p, idx) => (
+          <article
+            key={p.title}
+            className="card p-6 flex flex-col reveal"
+            style={{ transitionDelay: `${idx * 90}ms` }}
+          >
             <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{p.title}</h3>
             <p className="mt-2 text-slate-700 dark:text-slate-300">{p.description}</p>
 

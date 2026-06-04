@@ -7,11 +7,57 @@ html {
 }
 
 body {
-  @apply bg-slate-50 text-slate-800 antialiased transition-colors;
+  @apply bg-slate-50 text-slate-800 antialiased transition-colors duration-300;
 }
 
 html.dark body {
   @apply bg-slate-950 text-slate-200;
+}
+
+/* Subtle dotted grid background, layered on top of body color */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at top, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at top, black 40%, transparent 80%);
+}
+html.dark body::before {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-brand-500/30 text-brand-900;
+}
+html.dark ::selection {
+  @apply bg-brand-400/40 text-white;
+}
+
+/* Reveal-on-scroll: starts hidden, IntersectionObserver toggles `is-visible` */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @layer components {
@@ -22,30 +68,55 @@ html.dark body {
     @apply py-20 scroll-mt-20;
   }
   .section-title {
-    @apply text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight;
+    @apply text-3xl sm:text-4xl font-bold tracking-tight
+           bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900
+           dark:from-white dark:via-slate-200 dark:to-white
+           bg-clip-text text-transparent;
   }
   .section-subtitle {
     @apply mt-2 text-slate-600 dark:text-slate-400 max-w-2xl;
   }
   .card {
-    @apply bg-white dark:bg-slate-900 rounded-2xl shadow-sm
+    @apply relative bg-white dark:bg-slate-900 rounded-2xl shadow-sm
            ring-1 ring-slate-200/70 dark:ring-slate-800
-           hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300;
+           hover:shadow-xl hover:-translate-y-1 hover:ring-brand-200 dark:hover:ring-brand-900
+           transition-all duration-300;
   }
   .badge {
     @apply inline-flex items-center rounded-full
            bg-brand-50 dark:bg-brand-900/40
            px-3 py-1 text-sm font-medium
            text-brand-700 dark:text-brand-100
-           ring-1 ring-inset ring-brand-100 dark:ring-brand-900;
+           ring-1 ring-inset ring-brand-100 dark:ring-brand-900
+           hover:scale-105 hover:bg-brand-100 dark:hover:bg-brand-900/60
+           transition-all duration-200;
   }
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 transition-colors;
+    @apply relative inline-flex items-center gap-2 rounded-xl
+           bg-gradient-to-r from-brand-600 to-brand-500
+           px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-500/30
+           hover:shadow-lg hover:shadow-brand-500/40 hover:-translate-y-0.5
+           transition-all duration-200;
   }
   .btn-ghost {
     @apply inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold
            text-slate-700 dark:text-slate-200
            ring-1 ring-slate-200 dark:ring-slate-700
-           hover:bg-white dark:hover:bg-slate-800 transition-colors;
+           bg-white/60 dark:bg-slate-900/40 backdrop-blur
+           hover:bg-white dark:hover:bg-slate-800
+           hover:-translate-y-0.5 hover:ring-brand-300 dark:hover:ring-brand-700
+           transition-all duration-200;
+  }
+  /* Animated underline used on nav links */
+  .nav-link {
+    @apply relative hover:text-brand-600 dark:hover:text-brand-400 transition-colors;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-brand-600 dark:bg-brand-400
+           transition-all duration-300;
+  }
+  .nav-link:hover::after {
+    @apply w-full;
   }
 }

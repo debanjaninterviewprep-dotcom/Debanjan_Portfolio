@@ -8,8 +8,12 @@ import Education from './components/Education.jsx';
 import Achievements from './components/Achievements.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
+import useReveal from './hooks/useReveal.js';
 
 export default function App() {
+  // Enables scroll-triggered fade-up on any element with class="reveal"
+  useReveal();
+
   return (
     <div className="min-h-screen font-sans">
       <Navbar />

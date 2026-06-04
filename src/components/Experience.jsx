@@ -10,8 +10,12 @@ export default function Experience() {
       subtitle="Roles and impact across my career so far."
     >
       <ol className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 space-y-10">
-        {experience.map((job) => (
-          <li key={job.company + job.role} className="ml-6">
+        {experience.map((job, idx) => (
+          <li
+            key={job.company + job.role}
+            className="ml-6 reveal"
+            style={{ transitionDelay: `${idx * 100}ms` }}
+          >
             <span className="absolute -left-[9px] mt-1.5 h-4 w-4 rounded-full bg-brand-600 ring-4 ring-white dark:ring-slate-950" />
             <div className="card p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
