@@ -22,7 +22,10 @@ export default function Hero() {
             </span>
             <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
               Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-brand-600 via-indigo-500 to-brand-600 bg-size-200 bg-clip-text text-transparent animate-gradient">
+              <span
+                className="bg-gradient-to-r from-brand-600 via-indigo-500 to-brand-600 bg-clip-text text-transparent animate-gradient"
+                style={{ backgroundSize: '200% 200%' }}
+              >
                 {profile.name}
               </span>
               .
