@@ -88,6 +88,30 @@ export const projects = [
     ],
   },
   {
+    title: 'BlogSpot — Full Stack Blogging Platform',
+    description:
+      'End-to-end blogging platform built on a Clean Architecture .NET backend (API / Application / Domain / Infrastructure layers) with an Angular 17 + Angular Material client, JWT-based auth, SignalR for real-time updates, SQL Server persistence, and Docker-based local orchestration.',
+    tech: [
+      '.NET',
+      'C#',
+      'Clean Architecture',
+      'ASP.NET Web API',
+      'JWT',
+      'SignalR',
+      'Angular 17',
+      'Angular Material',
+      'SQL Server',
+      'Docker',
+    ],
+    link: 'https://github.com/debanjaninterviewprep-dotcom/BlogSpot',
+    achievements: [
+      'Implemented Clean Architecture across Domain, Application, Infrastructure, and API layers.',
+      'JWT-secured REST APIs consumed by an Angular 17 SPA with Angular Material UI.',
+      'Real-time updates via SignalR; containerized with Docker Compose for one-command local setup.',
+      'Cloud-deployable via render.yaml.',
+    ],
+  },
+  {
     title: 'React Portfolio (this site)',
     description:
       'A modern responsive portfolio built with React, Vite, and Tailwind CSS as part of actively upskilling on modern frontend tooling.',
