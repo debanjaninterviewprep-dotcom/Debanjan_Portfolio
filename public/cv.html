@@ -1,83 +1,370 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Debanjan Mukherjee — CV</title>
   <style>
-    :root{--accent:#0b66c3;--muted:#475569;--bg:#f3f4f6;--paper:#ffffff}
-    html,body{height:100%;margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:#0f172a}
+    :root {
+      --accent: #0b66c3;
+      --muted: #475569;
+      --bg: #f3f4f6;
+      --paper: #ffffff
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: var(--bg);
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      color: #0f172a
+    }
+
     /* Improve text rendering for crisper fonts */
-    html, body, .wrap, .card, .main, .sidebar, .skills, .job, .contact {
+    html,
+    body,
+    .wrap,
+    .card,
+    .main,
+    .sidebar,
+    .skills,
+    .job,
+    .contact {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
       -webkit-text-size-adjust: 100%;
     }
-    .wrap{max-width:980px;margin:26px auto;background:var(--paper);box-shadow:0 4px 12px rgba(16,24,40,.06);display:grid;grid-template-columns:280px 1fr;gap:0}
-    .sidebar{background:#072033;color:#e6f2ff;padding:28px;border-right:1px solid rgba(255,255,255,0.04)}
-    .sidebar a{color:#a7ddff}
-    .sidebar .skill{background:rgba(255,255,255,0.06);color:#e6f7ff;padding:6px 10px;border-radius:6px;font-size:13px;border:1px solid rgba(255,255,255,0.04);display:inline-block}
+
+    .wrap {
+      max-width: 980px;
+      margin: 26px auto;
+      background: var(--paper);
+      box-shadow: 0 4px 12px rgba(16, 24, 40, .06);
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0
+    }
+
+    .sidebar {
+      background: #072033;
+      color: #e6f2ff;
+      padding: 28px;
+      border-right: 1px solid rgba(255, 255, 255, 0.04)
+    }
+
+    .sidebar a {
+      color: #a7ddff
+    }
+
+    .sidebar .skill {
+      background: rgba(255, 255, 255, 0.06);
+      color: #e6f7ff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      display: inline-block
+    }
+
     /* Sidebar-specific adjustments to ensure readability on dark background */
-    .sidebar .section h3{color:#cfe9ff;margin:0 0 8px;font-weight:700}
-    .sidebar .section div, .sidebar .section p{color:#d7eafc}
-    .photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.08);display:block;margin-bottom:14px}
-    .main{padding:28px}
+    .sidebar .section h3 {
+      color: #cfe9ff;
+      margin: 0 0 8px;
+      font-weight: 700
+    }
+
+    .sidebar .section div,
+    .sidebar .section p {
+      color: #d7eafc
+    }
+
+    .photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.08);
+      display: block;
+      margin-bottom: 14px
+    }
+
+    .main {
+      padding: 28px
+    }
+
     /* Main content: increase contrast and use clearer weight/spacing */
-    .main, .main p, .main .section div, .main .job .meta, .main ul.bullets li {
+    .main,
+    .main p,
+    .main .section div,
+    .main .job .meta,
+    .main ul.bullets li {
       color: var(--muted);
       font-weight: 400;
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-    .main .section h3 { color:#0f172a; font-weight:700 }
-    .main a { color: var(--accent); text-decoration: none }
-    .main a:hover { text-decoration: underline }
-    h1{margin:0;font-size:26px;color:#fff}
-    h2{margin:6px 0 18px;font-size:14px;color:#cfe9ff;font-weight:600}
-    .contact{font-size:13px;color:#d7eafc;line-height:1.6}
-    .section{margin-bottom:18px}
-    .section h3{margin:0 0 10px;font-size:15px;color:#0f172a}
-    .job{margin-bottom:12px}
-    .job .meta{font-size:13px;color:var(--muted);margin-bottom:6px}
-    ul.bullets{margin:6px 0 0 18px;padding:0}
-    ul.bullets li{margin-bottom:6px}
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{background:#eef6ff;color:var(--accent);padding:6px 10px;border-radius:6px;font-size:13px}
-    .print-btn{display:inline-block;margin-bottom:12px;padding:8px 12px;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-size:13px}
-    .top-actions{display:flex;justify-content:flex-end;padding:12px 0 0 0}
-    .print-contact{display:none}
-    @media print{
+
+    .main .section h3 {
+      color: #0f172a;
+      font-weight: 700
+    }
+
+    .main a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    .main a:hover {
+      text-decoration: underline
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 26px;
+      color: #fff
+    }
+
+    h2 {
+      margin: 6px 0 18px;
+      font-size: 14px;
+      color: #cfe9ff;
+      font-weight: 600
+    }
+
+    .contact {
+      font-size: 13px;
+      color: #d7eafc;
+      line-height: 1.6
+    }
+
+    .section {
+      margin-bottom: 18px
+    }
+
+    .section h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: #0f172a
+    }
+
+    .job {
+      margin-bottom: 12px
+    }
+
+    .job .meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px
+    }
+
+    ul.bullets {
+      margin: 6px 0 0 18px;
+      padding: 0
+    }
+
+    ul.bullets li {
+      margin-bottom: 6px
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .skill {
+      background: #eef6ff;
+      color: var(--accent);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px
+    }
+
+    .print-btn {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 12px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      padding: 12px 0 0 0
+    }
+
+    .print-contact {
+      display: none
+    }
+
+    /* Responsive: tablets and small laptops */
+    @media (max-width: 980px) {
+      .wrap {
+        margin: 16px;
+        grid-template-columns: 240px 1fr;
+      }
+      .sidebar { padding: 22px; }
+      .main { padding: 22px; }
+      .photo { width: 100px; height: 100px; }
+      h1 { font-size: 22px; }
+    }
+
+    /* Responsive: tablets portrait / large phones */
+    @media (max-width: 760px) {
+      .top-actions {
+        margin: 12px 16px 0 !important;
+        max-width: none !important;
+      }
+      .wrap {
+        margin: 12px;
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 22px;
+        text-align: center;
+      }
+      .sidebar .photo { margin-left: auto; margin-right: auto; }
+      .sidebar .skills { justify-content: center; }
+      .sidebar .contact {
+        text-align: left;
+        display: inline-block;
+      }
+      .main { padding: 22px; }
+      h1 { font-size: 22px; word-break: break-word; }
+      h2 { font-size: 13px; }
+    }
+
+    /* Responsive: small phones */
+    @media (max-width: 420px) {
+      .top-actions { margin: 10px 10px 0 !important; }
+      .wrap { margin: 10px; }
+      .sidebar, .main { padding: 18px; }
+      .photo { width: 88px; height: 88px; }
+      h1 { font-size: 20px; letter-spacing: 0; }
+      h2 { font-size: 12px; }
+      .contact, .section h3 { font-size: 13px; }
+      .main p, .main .section div, ul.bullets li { font-size: 13px; }
+      ul.bullets { margin-left: 16px; }
+      ul.bullets ul.bullets { margin-left: 14px; }
+      .skill { font-size: 12px; padding: 5px 8px; }
+      .print-btn { font-size: 12px; padding: 7px 10px; }
+    }
+
+    @media print {
+
       /* Clean print canvas */
-      body{background:#fff;color:#111}
-      .top-actions, .no-print{display:none!important}
-      .print-contact{display:block !important;margin-bottom:8px;font-size:12px;color:#111}
-      .wrap{box-shadow:none;max-width:100%;grid-template-columns:280px 1fr !important;margin:8px auto}
+      body {
+        background: #fff;
+        color: #111
+      }
+
+      .top-actions,
+      .no-print {
+        display: none !important
+      }
+
+      .print-contact {
+        display: block !important;
+        margin-bottom: 8px;
+        font-size: 12px;
+        color: #111
+      }
+
+      .wrap {
+        box-shadow: none;
+        max-width: 100%;
+        grid-template-columns: 280px 1fr !important;
+        margin: 8px auto
+      }
 
       /* Prefer exact color adjustment where supported */
-      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
 
       /* Keep the dark sidebar appearance in print but remove effects that trigger rasterization */
-      .sidebar{display:block !important;background:#072033 !important;color:#e6f2ff !important;border-right:1px solid #05202a !important;box-shadow:none !important}
-      .sidebar a{color:#a7ddff !important}
-      .sidebar .skill{background:#0b2740 !important;color:#a7ddff !important;border:none !important}
-      .sidebar .section h3{color:#cfe9ff !important}
-      .sidebar .section div, .sidebar .section p{color:#d7eafc !important}
+      .sidebar {
+        display: block !important;
+        background: #072033 !important;
+        color: #e6f2ff !important;
+        border-right: 1px solid #05202a !important;
+        box-shadow: none !important
+      }
+
+      .sidebar a {
+        color: #a7ddff !important
+      }
+
+      .sidebar .skill {
+        background: #0b2740 !important;
+        color: #a7ddff !important;
+        border: none !important
+      }
+
+      .sidebar .section h3 {
+        color: #cfe9ff !important
+      }
+
+      .sidebar .section div,
+      .sidebar .section p {
+        color: #d7eafc !important
+      }
 
       /* Make main text darker and remove effects which can cause bitmap compositing */
-      .main, .main p, .main .section div, .main .job .meta, .main ul.bullets li { color:#111 !important; font-weight:400 !important; line-height:1.5 !important; text-rendering:optimizeLegibility }
-      .main h3{color:#0f172a !important}
-      a{color:#0b66c3 !important}
+      .main,
+      .main p,
+      .main .section div,
+      .main .job .meta,
+      .main ul.bullets li {
+        color: #111 !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        text-rendering: optimizeLegibility
+      }
+
+      .main h3 {
+        color: #0f172a !important
+      }
+
+      a {
+        color: #0b66c3 !important
+      }
 
       /* Remove shadows, transforms, filters which may cause rasterization in print output */
-      .wrap, .main, .job, .skills { box-shadow:none !important; transform:none !important; filter:none !important; will-change:unset !important }
+      .wrap,
+      .main,
+      .job,
+      .skills {
+        box-shadow: none !important;
+        transform: none !important;
+        filter: none !important;
+        will-change: unset !important
+      }
 
       /* Photo: print without heavy borders to avoid extra compositing */
-      .photo{display:block !important;width:96px;height:96px;border-radius:50% !important;border:2px solid rgba(255,255,255,0.04) !important;object-fit:cover}
+      .photo {
+        display: block !important;
+        width: 96px;
+        height: 96px;
+        border-radius: 50% !important;
+        border: 2px solid rgba(255, 255, 255, 0.04) !important;
+        object-fit: cover
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="top-actions no-print" style="max-width:980px;margin:18px auto 0;display:flex;justify-content:flex-end">
     <a class="print-btn" href="#" onclick="window.print();return false">Print / Save as PDF</a>
@@ -93,8 +380,10 @@
         <div><strong>Email:</strong> mukherjeedebanjan051@gmail.com</div>
         <div><strong>Phone:</strong> +91 9800195748</div>
         <div><strong>Location:</strong> Kolkata, West Bengal, India</div>
-        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/debanjanmukherjee-773a3221a" target="_blank" rel="noopener">debanjanmukherjee</a></div>
-        <div><strong>GitHub:</strong> <a href="https://github.com/debanjaninterviewprep-dotcom" target="_blank" rel="noopener">debanjanmukherjee</a></div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/debanjanmukherjee-773a3221a"
+            target="_blank" rel="noopener">debanjanmukherjee</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/debanjaninterviewprep-dotcom" target="_blank"
+            rel="noopener">debanjanmukherjee</a></div>
       </div>
 
       <div class="section">
@@ -134,7 +423,10 @@
       <section class="section">
         <h3>Summary</h3>
         <p style="color:var(--muted);font-size:14px">
-          I’m a Full Stack Software Developer with 4 years of experience at Wipro, delivering robust enterprise web applications using .NET (C#), Angular, SQL Server, and Azure. I enjoy turning business requirements into scalable, user-friendly software solutions. My work includes modernizing legacy systems, developing REST APIs, handling cloud deployments, and streamlining DevOps workflows using Bitbucket and CI/CD pipelines.
+          I’m a Full Stack Software Developer with 4 years of experience at Wipro, delivering robust enterprise web
+          applications using .NET (C#), Angular, SQL Server, and Azure. I enjoy turning business requirements into
+          scalable, user-friendly software solutions. My work includes modernizing legacy systems, developing REST APIs,
+          handling cloud deployments, and streamlining DevOps workflows using Bitbucket and CI/CD pipelines.
         </p>
       </section>
 
@@ -146,10 +438,12 @@
           <ul class="bullets">
             <li>Developed and maintained full‑stack applications using .NET Core, Angular, and SQL Server.</li>
             <li>Migrated legacy ASP.NET applications to modern .NET Core APIs and Angular frontends.</li>
-            <li>Designed reusable UI components and implemented RESTful APIs integrated with front-end apps and third-party services.</li>
+            <li>Designed reusable UI components and implemented RESTful APIs integrated with front-end apps and
+              third-party services.</li>
             <li>Deployed applications on Azure App Services; configured Azure SQL and Blob Storage.</li>
             <li>Used Bitbucket for version control and implemented CI/CD pipelines for automated deployments.</li>
-            <li>Collaborated with clients and business analysts to deliver high-quality software that meets business goals.</li>
+            <li>Collaborated with clients and business analysts to deliver high-quality software that meets business
+              goals.</li>
           </ul>
         </article>
       </section>
@@ -158,31 +452,46 @@
         <h3>Projects</h3>
         <ul class="bullets">
           <li>
-            <strong>Server Patching Scheduling Tool (INPAT)</strong> — Enterprise patch management platform for OS-level server & workstation patching across scopes and environments.
+            <strong>Server Patching Scheduling Tool (INPAT)</strong> — Enterprise patch management platform for OS-level
+            server & workstation patching across scopes and environments.
             <ul class="bullets">
-              <li>Full-stack system: Angular frontend (DataTables, dynamic forms, deep-linking) + .NET WebAPI backend, SQL Server, SignalR for SCCM action feedback, and Azure hosting.</li>
-              <li>Designed and implemented core scheduling model: Scopes → Groups → Maintenance Windows (one-off, daily, weekly, monthly, quarterly), Business Blackout Windows and Business Maintenance Windows.</li>
-              <li>Implemented assignment workflows for MWs and Features with approvals: feature requests route to IT security/scope owners with screenshot support and approval history tracking.</li>
-              <li>Built pull-based agent patching endpoints for secure agent-initiated downloads and heartbeat reporting for Windows and Linux agents.</li>
-              <li>Developed reporting features with export options (Teams, Excel, email) and the `UpcomingPatches` report for per-computer patch visibility.</li>
-              <li>Integrated automation and orchestration: PowerShell scripts for server-side validation and remote execution, Ansible/AAP integrations, and Azure Blob storage for archival/backups.</li>
-              <li>Implemented user and scope administration: role-based menus (Admin, Scope Owner, Approver), audit logs, MW admin, and user/role management with safety checks for scope ownership.</li>
-              <li>Delivered migration and upgrade initiatives (see Recognition): large-scale inventory migration (~10,200 records) via an automated .NET WebAPI migration, and frontend upgrade from Angular 6 → 18 with major refactoring and dependency alignment.</li>
+              <li>Full-stack system: Angular frontend (DataTables, dynamic forms, deep-linking) + .NET WebAPI backend,
+                SQL Server, SignalR for SCCM action feedback, and Azure hosting.</li>
+              <li>Designed and implemented core scheduling model: Scopes → Groups → Maintenance Windows (one-off, daily,
+                weekly, monthly, quarterly), Business Blackout Windows and Business Maintenance Windows.</li>
+              <li>Implemented assignment workflows for MWs and Features with approvals: feature requests route to IT
+                security/scope owners with screenshot support and approval history tracking.</li>
+              <li>Built pull-based agent patching endpoints for secure agent-initiated downloads and heartbeat reporting
+                for Windows and Linux agents.</li>
+              <li>Developed reporting features with export options (Teams, Excel, email) and the `UpcomingPatches`
+                report for per-computer patch visibility.</li>
+              <li>Integrated automation and orchestration: PowerShell scripts for server-side validation and remote
+                execution, Ansible/AAP integrations, and Azure Blob storage for archival/backups.</li>
+              <li>Implemented user and scope administration: role-based menus (Admin, Scope Owner, Approver), audit
+                logs, MW admin, and user/role management with safety checks for scope ownership.</li>
+              <li>Delivered migration and upgrade initiatives (see Recognition): large-scale inventory migration
+                (~10,200 records) via an automated .NET WebAPI migration, and frontend upgrade from Angular 6 → 18 with
+                major refactoring and dependency alignment.</li>
             </ul>
           </li>
         </ul>
       </section>
 
-        <section class="section">
-          <h3>Recognition</h3>
-          <div class="job">
-            <div class="meta"><strong>Europe Excellence - Rising Star Award</strong> &mdash; Wipro &middot; Mar 2026</div>
-            <ul class="bullets">
-              <li>Delivered two major initiatives with complete accuracy and zero downtime: built a .NET WebAPI-based automated migration process that shifted ~10,200 inventory host and schedule records from the old Ansible Tower domain to the new AAP domain. The end-to-end 11-hour migration was fully automated, thoroughly tested in Dev/QA, and executed flawlessly in production.</li>
-              <li>Upgraded the INPAT application from Angular 6 to Angular 18 within a month, involving significant refactoring and dependency alignment. The complex upgrade passed all environment tests and greatly strengthened the application's reliability and scalability.</li>
-            </ul>
-          </div>
-        </section>
+      <section class="section">
+        <h3>Recognition</h3>
+        <div class="job">
+          <div class="meta"><strong>Europe Excellence - Rising Star Award</strong> &mdash; Wipro &middot; Mar 2026</div>
+          <ul class="bullets">
+            <li>Delivered two major initiatives with complete accuracy and zero downtime: built a .NET WebAPI-based
+              automated migration process that shifted ~10,200 inventory host and schedule records from the old Ansible
+              Tower domain to the new AAP domain. The end-to-end 11-hour migration was fully automated, thoroughly
+              tested in Dev/QA, and executed flawlessly in production.</li>
+            <li>Upgraded the INPAT application from Angular 6 to Angular 18 within a month, involving significant
+              refactoring and dependency alignment. The complex upgrade passed all environment tests and greatly
+              strengthened the application's reliability and scalability.</li>
+          </ul>
+        </div>
+      </section>
 
       <section class="section">
         <h3>Skills</h3>
@@ -199,21 +508,28 @@
 
       <section class="section">
         <h3>Education</h3>
-        <div style="color:var(--muted)"><strong>MTech (Software Systems)</strong>, BITS Pilani — June 2023 – Dec 2026 (In progress)</div>
+        <div style="color:var(--muted)"><strong>MTech (Software Systems)</strong>, BITS Pilani — June 2023 – Dec 2026
+          (In progress)</div>
         <div style="color:var(--muted);margin-top:4px">Passing CGPA: In progress</div>
-        <div style="color:var(--muted);margin-top:10px"><strong>BCA (Software Development)</strong>, Maulana Abul Kalam Azad University of Technology — 2019 – 2022</div>
+        <div style="color:var(--muted);margin-top:10px"><strong>BCA (Software Development)</strong>, Maulana Abul Kalam
+          Azad University of Technology — 2019 – 2022</div>
         <div style="color:var(--muted);margin-top:4px">Passing CGPA: 9.56</div>
-        <div style="color:var(--muted);margin-top:10px"><strong>Higher Secondary Education</strong>, Memari V.M. Institution (Unit-1) — Passing Score: 8.38</div>
-        <div style="color:var(--muted);margin-top:4px"><strong>Secondary Education</strong>, Memari V.M. Institution (Unit-1) — Passing Score: 9.1</div>
+        <div style="color:var(--muted);margin-top:10px"><strong>Higher Secondary Education</strong>, Memari V.M.
+          Institution (Unit-1) — Passing Score: 8.38</div>
+        <div style="color:var(--muted);margin-top:4px"><strong>Secondary Education</strong>, Memari V.M. Institution
+          (Unit-1) — Passing Score: 9.1</div>
       </section>
 
       <section class="section">
         <h3>References</h3>
-        <div style="font-size:13px;color:var(--muted)"><strong>Vikram Lakhotia</strong>, Enterprise Architect — Wipro</div>
-        <div style="font-size:13px;color:var(--muted)">Personal Email: <a href="mailto:Vikram.lakhotia@gmail.com">Vikram.lakhotia@gmail.com</a><br>Phone: +91 8017682001</div>
+        <div style="font-size:13px;color:var(--muted)"><strong>Vikram Lakhotia</strong>, Enterprise Architect — Wipro
+        </div>
+        <div style="font-size:13px;color:var(--muted)">Personal Email: <a
+            href="mailto:Vikram.lakhotia@gmail.com">Vikram.lakhotia@gmail.com</a><br>Phone: +91 8017682001</div>
       </section>
-      
+
     </main>
   </div>
 </body>
+
 </html>
