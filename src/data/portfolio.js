@@ -143,5 +143,7 @@ export const achievements = [
     issuer: 'Wipro',
     description:
       'Recognized for outstanding ownership, delivery quality, and measurable impact on the INPAT application across the European business unit.',
+    imageUrl: `${import.meta.env.BASE_URL}rising-star-award.jpg`,
+    certificateUrl: `${import.meta.env.BASE_URL}rising-star-award.pdf`,
   },
 ];
