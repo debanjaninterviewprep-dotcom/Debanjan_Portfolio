@@ -1,535 +1,598 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Debanjan Mukherjee — CV</title>
+  <title>Debanjan Mukherjee — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
     :root {
-      --accent: #0b66c3;
-      --muted: #475569;
-      --bg: #f3f4f6;
-      --paper: #ffffff
+      --accent: #1a56db;
+      --accent-light: #dbeafe;
+      --text: #111827;
+      --muted: #4b5563;
+      --light: #6b7280;
+      --divider: #e5e7eb;
+      --bg: #f0f4f8;
+      --paper: #ffffff;
+      --sidebar: #0f1b2d;
     }
 
-    html,
-    body {
-      height: 100%;
+    html, body {
       margin: 0;
       background: var(--bg);
-      font-family: Inter, Segoe UI, Arial, sans-serif;
-      color: #0f172a
-    }
-
-    /* Improve text rendering for crisper fonts */
-    html,
-    body,
-    .wrap,
-    .card,
-    .main,
-    .sidebar,
-    .skills,
-    .job,
-    .contact {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    .wrap {
-      max-width: 980px;
-      margin: 26px auto;
-      background: var(--paper);
-      box-shadow: 0 4px 12px rgba(16, 24, 40, .06);
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 0
-    }
-
-    .sidebar {
-      background: #072033;
-      color: #e6f2ff;
-      padding: 28px;
-      border-right: 1px solid rgba(255, 255, 255, 0.04)
-    }
-
-    .sidebar a {
-      color: #a7ddff
-    }
-
-    .sidebar .skill {
-      background: rgba(255, 255, 255, 0.06);
-      color: #e6f7ff;
-      padding: 6px 10px;
-      border-radius: 6px;
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
       font-size: 13px;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      display: inline-block
-    }
-
-    /* Sidebar-specific adjustments to ensure readability on dark background */
-    .sidebar .section h3 {
-      color: #cfe9ff;
-      margin: 0 0 8px;
-      font-weight: 700
-    }
-
-    .sidebar .section div,
-    .sidebar .section p {
-      color: #d7eafc
-    }
-
-    .photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255, 255, 255, 0.08);
-      display: block;
-      margin-bottom: 14px
-    }
-
-    .main {
-      padding: 28px
-    }
-
-    /* Main content: increase contrast and use clearer weight/spacing */
-    .main,
-    .main p,
-    .main .section div,
-    .main .job .meta,
-    .main ul.bullets li {
-      color: var(--muted);
-      font-weight: 400;
+      color: var(--text);
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
-    .main .section h3 {
-      color: #0f172a;
-      font-weight: 700
+    /* ── Page wrapper ── */
+    .page-wrap {
+      max-width: 960px;
+      margin: 28px auto;
     }
 
-    .main a {
-      color: var(--accent);
-      text-decoration: none
-    }
-
-    .main a:hover {
-      text-decoration: underline
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 26px;
-      color: #fff
-    }
-
-    h2 {
-      margin: 6px 0 18px;
-      font-size: 14px;
-      color: #cfe9ff;
-      font-weight: 600
-    }
-
-    .contact {
-      font-size: 13px;
-      color: #d7eafc;
-      line-height: 1.6
-    }
-
-    .section {
-      margin-bottom: 18px
-    }
-
-    .section h3 {
-      margin: 0 0 10px;
-      font-size: 15px;
-      color: #0f172a
-    }
-
-    .job {
-      margin-bottom: 12px
-    }
-
-    .job .meta {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 6px
-    }
-
-    ul.bullets {
-      margin: 6px 0 0 18px;
-      padding: 0
-    }
-
-    ul.bullets li {
-      margin-bottom: 6px
-    }
-
-    .skills {
+    .top-bar {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px
-    }
-
-    .skill {
-      background: #eef6ff;
-      color: var(--accent);
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 13px
+      justify-content: flex-end;
+      margin-bottom: 10px;
     }
 
     .print-btn {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
       background: var(--accent);
       color: #fff;
       border-radius: 6px;
       text-decoration: none;
-      font-size: 13px
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+    .print-btn:hover { background: #1e40af; }
+
+    /* ── Resume card ── */
+    .resume {
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      border-radius: 8px;
+      overflow: hidden;
     }
 
-    .top-actions {
+    /* ══ SIDEBAR ══ */
+    .sidebar {
+      background: var(--sidebar);
+      color: #e2e8f0;
+      padding: 28px 20px;
+    }
+
+    .profile-photo {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(96,165,250,.25);
+      display: block;
+      margin: 0 auto 14px;
+    }
+
+    .name {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      letter-spacing: .5px;
+      margin: 0;
+    }
+
+    .role-tag {
+      font-size: 11px;
+      color: #93c5fd;
+      font-weight: 500;
+      text-align: center;
+      margin: 5px 0 18px;
+      line-height: 1.4;
+    }
+
+    /* Sidebar sections */
+    .s-section {
+      margin-bottom: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .s-section:first-of-type { border-top: none; padding-top: 0; }
+
+    .s-title {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin: 0 0 8px;
+    }
+
+    .s-line {
       display: flex;
-      justify-content: flex-end;
-      padding: 12px 0 0 0
+      align-items: flex-start;
+      gap: 7px;
+      font-size: 12px;
+      color: #cbd5e1;
+      margin-bottom: 5px;
+      line-height: 1.4;
     }
 
-    .print-contact {
-      display: none
+    .s-line .ico { color: #60a5fa; flex-shrink: 0; width: 14px; text-align: center; font-size: 11px; margin-top: 1px; }
+
+    .sidebar a { color: #7dd3fc; text-decoration: none; }
+    .sidebar a:hover { text-decoration: underline; }
+
+    .tag-group { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .tag {
+      background: rgba(96,165,250,.1);
+      border: 1px solid rgba(96,165,250,.15);
+      color: #bfdbfe;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 4px;
     }
 
-    /* Responsive: tablets and small laptops */
-    @media (max-width: 980px) {
-      .wrap {
-        margin: 16px;
-        grid-template-columns: 240px 1fr;
-      }
-      .sidebar { padding: 22px; }
-      .main { padding: 22px; }
-      .photo { width: 100px; height: 100px; }
-      h1 { font-size: 22px; }
+    /* ══ MAIN CONTENT ══ */
+    .main {
+      padding: 28px 28px 24px;
     }
 
-    /* Responsive: tablets portrait / large phones */
-    @media (max-width: 760px) {
-      .top-actions {
-        margin: 12px 16px 0 !important;
-        max-width: none !important;
-      }
-      .wrap {
-        margin: 12px;
-        grid-template-columns: 1fr;
-      }
-      .sidebar {
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        padding: 22px;
-        text-align: center;
-      }
-      .sidebar .photo { margin-left: auto; margin-right: auto; }
-      .sidebar .skills { justify-content: center; }
-      .sidebar .contact {
-        text-align: left;
-        display: inline-block;
-      }
-      .main { padding: 22px; }
-      h1 { font-size: 22px; word-break: break-word; }
-      h2 { font-size: 13px; }
+    /* Section headings */
+    .m-section { margin-bottom: 18px; }
+    .m-section:last-child { margin-bottom: 0; }
+
+    .m-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid var(--accent);
+      margin: 0 0 12px;
+      display: block;
     }
 
-    /* Responsive: small phones */
-    @media (max-width: 420px) {
-      .top-actions { margin: 10px 10px 0 !important; }
-      .wrap { margin: 10px; }
-      .sidebar, .main { padding: 18px; }
-      .photo { width: 88px; height: 88px; }
-      h1 { font-size: 20px; letter-spacing: 0; }
-      h2 { font-size: 12px; }
-      .contact, .section h3 { font-size: 13px; }
-      .main p, .main .section div, ul.bullets li { font-size: 13px; }
-      ul.bullets { margin-left: 16px; }
-      ul.bullets ul.bullets { margin-left: 14px; }
-      .skill { font-size: 12px; padding: 5px 8px; }
-      .print-btn { font-size: 12px; padding: 7px 10px; }
+    /* Summary */
+    .summary-text {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Experience row */
+    .exp-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-bottom: 6px;
+    }
+
+    .exp-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .exp-company { color: var(--accent); font-weight: 600; }
+
+    .exp-period {
+      font-size: 11.5px;
+      color: var(--light);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Bullets */
+    ul.b {
+      margin: 0;
+      padding: 0 0 0 15px;
+      list-style: none;
+    }
+
+    ul.b li {
+      position: relative;
+      padding-left: 4px;
+      margin-bottom: 4px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    ul.b li::before {
+      content: "▸";
+      position: absolute;
+      left: -12px;
+      color: var(--accent);
+      font-size: 10px;
+      top: 1px;
+    }
+
+    /* Skills */
+    .skill-row { display: flex; flex-direction: column; gap: 4px; }
+    .skill-cat {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--light);
+    }
+    .skill-grid { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .skill-chip {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 4px;
+    }
+
+    /* Project blocks */
+    .proj-block { padding-bottom: 10px; border-bottom: 1px dashed var(--divider); }
+    .proj-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+    /* Education table-like rows */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--divider);
+    }
+    .edu-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .edu-deg { font-size: 13px; font-weight: 700; color: var(--text); margin: 0; }
+    .edu-school { font-size: 12px; color: var(--muted); }
+    .edu-right { text-align: right; flex-shrink: 0; }
+    .edu-year { font-size: 11.5px; color: var(--light); }
+    .edu-score { font-size: 11.5px; font-weight: 600; color: var(--accent); }
+
+    /* Award strip */
+    .award-strip {
+      padding: 10px 14px;
+      background: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .award-name { font-size: 13px; font-weight: 700; color: #92400e; margin: 0 0 1px; }
+    .award-sub { font-size: 11.5px; color: #b45309; }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .resume { grid-template-columns: 1fr; }
+      .sidebar { padding: 22px 20px; text-align: center; }
+      .s-line { justify-content: center; }
+      .tag-group { justify-content: center; }
+      .main { padding: 22px 18px; }
+    }
+
+    /* Print */
+    @page {
+      size: A4;
+      margin: 10mm 10mm;
     }
 
     @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 
-      /* Clean print canvas */
-      body {
+      html, body {
         background: #fff;
-        color: #111
+        font-size: 11px;
+        margin: 0;
+        padding: 0;
       }
 
-      .top-actions,
-      .no-print {
-        display: none !important
-      }
+      .top-bar { display: none !important; }
 
-      .print-contact {
-        display: block !important;
-        margin-bottom: 8px;
-        font-size: 12px;
-        color: #111
-      }
-
-      .wrap {
-        box-shadow: none;
+      .page-wrap {
         max-width: 100%;
-        grid-template-columns: 280px 1fr !important;
-        margin: 8px auto
+        margin: 0;
+        padding: 0;
       }
 
-      /* Prefer exact color adjustment where supported */
-      * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+      .resume {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        grid-template-columns: 220px 1fr !important;
+        width: 100%;
       }
 
-      /* Keep the dark sidebar appearance in print but remove effects that trigger rasterization */
+      /* Preserve dark sidebar exactly */
       .sidebar {
-        display: block !important;
-        background: #072033 !important;
-        color: #e6f2ff !important;
-        border-right: 1px solid #05202a !important;
-        box-shadow: none !important
+        background: #0f1b2d !important;
+        color: #e2e8f0 !important;
+        padding: 22px 16px !important;
       }
 
-      .sidebar a {
-        color: #a7ddff !important
+      .name { color: #ffffff !important; }
+      .role-tag { color: #93c5fd !important; }
+      .s-title { color: #60a5fa !important; }
+      .s-line { color: #cbd5e1 !important; }
+      .sidebar a { color: #7dd3fc !important; }
+
+      .tag {
+        background: rgba(96,165,250,.12) !important;
+        border-color: rgba(96,165,250,.2) !important;
+        color: #bfdbfe !important;
       }
 
-      .sidebar .skill {
-        background: #0b2740 !important;
-        color: #a7ddff !important;
-        border: none !important
+      /* Main area */
+      .main {
+        padding: 22px 22px 18px !important;
       }
 
-      .sidebar .section h3 {
-        color: #cfe9ff !important
+      .m-title {
+        color: #1a56db !important;
+        border-bottom-color: #1a56db !important;
       }
 
-      .sidebar .section div,
-      .sidebar .section p {
-        color: #d7eafc !important
+      .summary-text,
+      ul.b li {
+        color: #374151 !important;
       }
 
-      /* Make main text darker and remove effects which can cause bitmap compositing */
-      .main,
-      .main p,
-      .main .section div,
-      .main .job .meta,
-      .main ul.bullets li {
-        color: #111 !important;
-        font-weight: 400 !important;
-        line-height: 1.5 !important;
-        text-rendering: optimizeLegibility
+      .exp-title { color: #111827 !important; }
+      .exp-company { color: #1a56db !important; }
+      .exp-period { color: #6b7280 !important; }
+
+      .skill-cat { color: #6b7280 !important; }
+
+      .skill-chip {
+        background: #dbeafe !important;
+        color: #1a56db !important;
       }
 
-      .main h3 {
-        color: #0f172a !important
-      }
+      .edu-deg { color: #111827 !important; }
+      .edu-school { color: #4b5563 !important; }
+      .edu-year { color: #6b7280 !important; }
+      .edu-score { color: #1a56db !important; }
 
-      a {
-        color: #0b66c3 !important
+      .award-strip {
+        background: #fffbeb !important;
+        border-left-color: #f59e0b !important;
       }
+      .award-name { color: #92400e !important; }
+      .award-sub { color: #b45309 !important; }
 
-      /* Remove shadows, transforms, filters which may cause rasterization in print output */
-      .wrap,
-      .main,
-      .job,
-      .skills {
+      .proj-block { border-bottom-color: #e5e7eb !important; }
+      .edu-row { border-bottom-color: #e5e7eb !important; }
+
+      /* Suppress transforms and shadows that cause rasterization */
+      .resume, .main, .sidebar, .skill-chip, .tag, .award-strip {
         box-shadow: none !important;
         transform: none !important;
         filter: none !important;
-        will-change: unset !important
+        will-change: unset !important;
       }
 
-      /* Photo: print without heavy borders to avoid extra compositing */
-      .photo {
-        display: block !important;
-        width: 96px;
-        height: 96px;
-        border-radius: 50% !important;
-        border: 2px solid rgba(255, 255, 255, 0.04) !important;
-        object-fit: cover
+      .profile-photo {
+        width: 80px !important;
+        height: 80px !important;
+        border: 3px solid rgba(96,165,250,.2) !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="top-actions no-print" style="max-width:980px;margin:18px auto 0;display:flex;justify-content:flex-end">
-    <a class="print-btn" href="#" onclick="window.print();return false">Print / Save as PDF</a>
-  </div>
+  <div class="page-wrap">
+    <div class="top-bar no-print">
+      <a class="print-btn" href="#" onclick="window.print();return false">⎙ Print / Save as PDF</a>
+    </div>
 
-  <div class="wrap" role="document">
-    <aside class="sidebar">
-      <img src="profile.jpg" alt="Debanjan Mukherjee" class="photo" onerror="this.style.display='none'">
-      <h1>DEBANJAN MUKHERJEE</h1>
-      <h2>Full Stack Developer | .NET | Angular | Azure | SQL</h2>
+    <div class="resume">
 
-      <div class="section contact">
-        <div><strong>Email:</strong> mukherjeedebanjan051@gmail.com</div>
-        <div><strong>Phone:</strong> +91 9800195748</div>
-        <div><strong>Location:</strong> Kolkata, West Bengal, India</div>
-        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/debanjanmukherjee-773a3221a"
-            target="_blank" rel="noopener">debanjanmukherjee</a></div>
-        <div><strong>GitHub:</strong> <a href="https://github.com/debanjaninterviewprep-dotcom" target="_blank"
-            rel="noopener">debanjanmukherjee</a></div>
-      </div>
+      <!-- ════ SIDEBAR ════ -->
+      <aside class="sidebar">
+        <img src="profile.jpg" alt="Debanjan Mukherjee" class="profile-photo" onerror="this.style.display='none'">
+        <h1 class="name">Debanjan Mukherjee</h1>
+        <p class="role-tag">Full Stack Developer<br>.NET · Angular · Azure · SQL</p>
 
-      <div class="section">
-        <h3>Top Skills</h3>
-        <div class="skills">
-          <span class="skill">AI-powered Development</span>
-          <span class="skill">SQL Stored Procedures</span>
-          <span class="skill">SQL Report Writing</span>
-          <span class="skill">.NET Core</span>
-          <span class="skill">C#</span>
-          <span class="skill">Angular</span>
-          <span class="skill">Azure</span>
-          <span class="skill">Microservices</span>
-          <span class="skill">CI/CD</span>
+        <div class="s-section">
+          <h3 class="s-title">Contact</h3>
+          <div class="s-line"><span class="ico">✉</span> mukherjeedebanjan051@gmail.com</div>
+          <div class="s-line"><span class="ico">☎</span> +91 9800195748</div>
+          <div class="s-line"><span class="ico">◎</span> Kolkata, West Bengal, India</div>
+          <div class="s-line"><span class="ico">in</span>
+            <a href="https://www.linkedin.com/in/debanjanmukherjee-773a3221a" target="_blank" rel="noopener">linkedin/debanjanmukherjee</a>
+          </div>
+          <div class="s-line"><span class="ico">⌘</span>
+            <a href="https://github.com/debanjaninterviewprep-dotcom" target="_blank" rel="noopener">github/debanjanmukherjee</a>
+          </div>
         </div>
-      </div>
 
-      <div class="section">
-        <h3>Certifications</h3>
-        <div style="font-size:13px;color:#d7eafc">
-          Microsoft Certified: Azure Fundamentals
+        <div class="s-section">
+          <h3 class="s-title">Core Skills</h3>
+          <div class="tag-group">
+            <span class="tag">.NET Core</span>
+            <span class="tag">C#</span>
+            <span class="tag">Angular</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Azure</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">CI / CD</span>
+            <span class="tag">Microservices</span>
+          </div>
         </div>
-      </div>
 
-      <div class="section">
-        <h3>Languages</h3>
-        <div style="font-size:13px;color:#d7eafc">English (Fluent), Hindi, Bengali</div>
-      </div>
+        <div class="s-section">
+          <h3 class="s-title">Certification</h3>
+          <div class="s-line"><span class="ico">⬡</span> Microsoft Certified: Azure Fundamentals</div>
+        </div>
 
-      <div class="section">
-        <h3>Hobbies</h3>
-        <div style="font-size:13px;color:#d7eafc">Guitar, Cricket, Painting</div>
-      </div>
-    </aside>
+        <div class="s-section">
+          <h3 class="s-title">Languages</h3>
+          <div class="s-line">English (Fluent) · Hindi · Bengali</div>
+        </div>
 
-    <main class="main">
-      <section class="section">
-        <h3>Summary</h3>
-        <p style="color:var(--muted);font-size:14px">
-          I’m a Full Stack Software Developer with 4 years of experience at Wipro, delivering robust enterprise web
-          applications using .NET (C#), Angular, SQL Server, and Azure. I enjoy turning business requirements into
-          scalable, user-friendly software solutions. My work includes modernizing legacy systems, developing REST APIs,
-          handling cloud deployments, and streamlining DevOps workflows using Bitbucket and CI/CD pipelines.
-        </p>
-      </section>
+        <div class="s-section">
+          <h3 class="s-title">Interests</h3>
+          <div class="s-line">Guitar · Cricket · Painting</div>
+        </div>
+      </aside>
 
-      <section class="section">
-        <h3>Experience</h3>
+      <!-- ════ MAIN ════ -->
+      <main class="main">
 
-        <article class="job">
-          <div class="meta"><strong>Software Developer — Wipro</strong> &middot; June 2022 — Present (4 years)</div>
-          <ul class="bullets">
-            <li>Developed and maintained full‑stack applications using .NET Core, Angular, and SQL Server.</li>
-            <li>Migrated legacy ASP.NET applications to modern .NET Core APIs and Angular frontends.</li>
-            <li>Designed reusable UI components and implemented RESTful APIs integrated with front-end apps and
-              third-party services.</li>
-            <li>Deployed applications on Azure App Services; configured Azure SQL and Blob Storage.</li>
-            <li>Used Bitbucket for version control and implemented CI/CD pipelines for automated deployments.</li>
-            <li>Collaborated with clients and business analysts to deliver high-quality software that meets business
-              goals.</li>
+        <!-- Summary -->
+        <div class="m-section">
+          <span class="m-title">Professional Summary</span>
+          <p class="summary-text">
+            Full Stack Developer with 4+ years at Wipro engineering enterprise applications on a .NET &amp; Angular stack. Experienced in REST API design, legacy modernisation, cloud deployments, and CI/CD automation. Practices <strong>AI-augmented development</strong> daily — using GitHub Copilot, ChatGPT, Gemini, and Claude to accelerate delivery and reduce manual effort. Recognised with the <strong>Europe Excellence — Rising Star Award (Mar 2026)</strong> for zero-downtime migrations and a major Angular upgrade.
+          </p>
+        </div>
+
+        <!-- Experience -->
+        <div class="m-section">
+          <span class="m-title">Experience</span>
+          <div class="exp-row">
+            <h4 class="exp-title">Software Developer &mdash; <span class="exp-company">Wipro</span></h4>
+            <span class="exp-period">Jun 2022 — Present · 4 yrs</span>
+          </div>
+          <ul class="b">
+            <li>Lead developer on the INPAT enterprise platform — drove end-to-end design, development, and production delivery on a .NET &amp; Angular stack alongside the solution architect.</li>
+            <li>Drove backend modernisation improving maintainability, performance, and long-term scalability while maintaining application stability.</li>
+            <li>Automated migration of ~10,200 inventory host/schedule records (Ansible Tower → AAP) with 100% accuracy and zero downtime in an 11-hour production run.</li>
+            <li>Upgraded INPAT from Angular 6 → 18 within one month — full refactoring, dependency realignment, validated across Dev/QA/Prod.</li>
+            <li>Practised AI-augmented development (GitHub Copilot, ChatGPT, Gemini, Claude) across daily tasks — reducing manual effort by up to ~90%.</li>
+            <li>Resolved production issues with minimal business disruption; resolved cross-team dependencies to accelerate delivery cycles.</li>
           </ul>
-        </article>
-      </section>
+        </div>
 
-      <section class="section">
-        <h3>Projects</h3>
-        <ul class="bullets">
-          <li>
-            <strong>Server Patching Scheduling Tool (INPAT)</strong> — Enterprise patch management platform for OS-level
-            server & workstation patching across scopes and environments.
-            <ul class="bullets">
-              <li>Full-stack system: Angular frontend (DataTables, dynamic forms, deep-linking) + .NET WebAPI backend,
-                SQL Server, SignalR for SCCM action feedback, and Azure hosting.</li>
-              <li>Designed and implemented core scheduling model: Scopes → Groups → Maintenance Windows (one-off, daily,
-                weekly, monthly, quarterly), Business Blackout Windows and Business Maintenance Windows.</li>
-              <li>Implemented assignment workflows for MWs and Features with approvals: feature requests route to IT
-                security/scope owners with screenshot support and approval history tracking.</li>
-              <li>Built pull-based agent patching endpoints for secure agent-initiated downloads and heartbeat reporting
-                for Windows and Linux agents.</li>
-              <li>Developed reporting features with export options (Teams, Excel, email) and the `UpcomingPatches`
-                report for per-computer patch visibility.</li>
-              <li>Integrated automation and orchestration: PowerShell scripts for server-side validation and remote
-                execution, Ansible/AAP integrations, and Azure Blob storage for archival/backups.</li>
-              <li>Implemented user and scope administration: role-based menus (Admin, Scope Owner, Approver), audit
-                logs, MW admin, and user/role management with safety checks for scope ownership.</li>
-              <li>Delivered migration and upgrade initiatives (see Recognition): large-scale inventory migration
-                (~10,200 records) via an automated .NET WebAPI migration, and frontend upgrade from Angular 6 → 18 with
-                major refactoring and dependency alignment.</li>
+        <!-- Projects -->
+        <div class="m-section">
+          <span class="m-title">Projects</span>
+
+          <div class="proj-block">
+            <div class="exp-row">
+              <h4 class="exp-title">INPAT — Enterprise Inventory &amp; Patching Platform</h4>
+              <span class="exp-period">.NET · Angular · SQL Server</span>
+            </div>
+            <ul class="b">
+              <li>Critical enterprise platform for OS-level patch scheduling across Windows/Linux servers and workstations.</li>
+              <li>Scheduling engine with one-off, daily, weekly, monthly &amp; quarterly Maintenance Windows and blackout periods.</li>
+              <li>Role-based access, approval workflows, SignalR real-time feedback, and Teams/Excel reporting.</li>
             </ul>
-          </li>
-        </ul>
-      </section>
+          </div>
 
-      <section class="section">
-        <h3>Recognition</h3>
-        <div class="job">
-          <div class="meta"><strong>Europe Excellence - Rising Star Award</strong> &mdash; Wipro &middot; Mar 2026</div>
-          <ul class="bullets">
-            <li>Delivered two major initiatives with complete accuracy and zero downtime: built a .NET WebAPI-based
-              automated migration process that shifted ~10,200 inventory host and schedule records from the old Ansible
-              Tower domain to the new AAP domain. The end-to-end 11-hour migration was fully automated, thoroughly
-              tested in Dev/QA, and executed flawlessly in production.</li>
-            <li>Upgraded the INPAT application from Angular 6 to Angular 18 within a month, involving significant
-              refactoring and dependency alignment. The complex upgrade passed all environment tests and greatly
-              strengthened the application's reliability and scalability.</li>
-          </ul>
+          <div class="proj-block" style="margin-top:12px">
+            <div class="exp-row">
+              <h4 class="exp-title">BlogSpot — Full Stack Blogging Platform <a href="https://github.com/debanjaninterviewprep-dotcom/BlogSpot" target="_blank" rel="noopener" style="font-size:11px;font-weight:500">[GitHub]</a></h4>
+              <span class="exp-period">.NET · Angular · Docker</span>
+            </div>
+            <ul class="b">
+              <li>Clean Architecture .NET backend (Domain / Application / Infrastructure / API) with JWT auth and SignalR real-time updates.</li>
+              <li>Angular 17 + Angular Material SPA; SQL Server persistence; Docker Compose for one-command local setup.</li>
+            </ul>
+          </div>
+
+          <div class="proj-block" style="margin-top:12px">
+            <div class="exp-row">
+              <h4 class="exp-title">.NET Full Stack Course <a href="https://github.com/debanjaninterviewprep-dotcom/DotNet-Full-Stack-Course" target="_blank" rel="noopener" style="font-size:11px;font-weight:500">[GitHub]</a></h4>
+              <span class="exp-period">.NET · C# · AI-augmented</span>
+            </div>
+            <ul class="b">
+              <li>Self-designed, AI-augmented learning track covering C#, ASP.NET Web API, Entity Framework, and Angular integration — open-sourced on GitHub.</li>
+            </ul>
+          </div>
         </div>
-      </section>
 
-      <section class="section">
-        <h3>Skills</h3>
-        <div class="skills">
-          <span class="skill">.NET Core</span>
-          <span class="skill">Angular</span>
-          <span class="skill">SQL Server</span>
-          <span class="skill">Azure</span>
-          <span class="skill">REST APIs</span>
-          <span class="skill">Bitbucket / Git</span>
-          <span class="skill">PowerShell</span>
+        <!-- Skills -->
+        <div class="m-section">
+          <span class="m-title">Technical Skills</span>
+          <div style="display:grid;gap:6px">
+            <div class="skill-row"><span class="skill-cat">Backend</span>
+              <div class="skill-grid">
+                <span class="skill-chip">.NET Core / C#</span><span class="skill-chip">ASP.NET Web API</span><span class="skill-chip">Entity Framework</span><span class="skill-chip">REST APIs</span><span class="skill-chip">SignalR</span>
+              </div>
+            </div>
+            <div class="skill-row"><span class="skill-cat">Frontend</span>
+              <div class="skill-grid">
+                <span class="skill-chip">Angular</span><span class="skill-chip">TypeScript</span><span class="skill-chip">JavaScript (ES6+)</span><span class="skill-chip">HTML5 / CSS3</span>
+              </div>
+            </div>
+            <div class="skill-row"><span class="skill-cat">Data &amp; Cloud</span>
+              <div class="skill-grid">
+                <span class="skill-chip">SQL Server / T-SQL</span><span class="skill-chip">Azure</span><span class="skill-chip">Docker</span><span class="skill-chip">Ansible / AAP</span>
+              </div>
+            </div>
+            <div class="skill-row"><span class="skill-cat">DevOps &amp; Tools</span>
+              <div class="skill-grid">
+                <span class="skill-chip">Git / Bitbucket</span><span class="skill-chip">Azure DevOps</span><span class="skill-chip">PowerShell</span><span class="skill-chip">Postman</span><span class="skill-chip">JIRA</span>
+              </div>
+            </div>
+            <div class="skill-row"><span class="skill-cat">AI Tools</span>
+              <div class="skill-grid">
+                <span class="skill-chip">GitHub Copilot</span><span class="skill-chip">ChatGPT</span><span class="skill-chip">Gemini</span><span class="skill-chip">Claude</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      <section class="section">
-        <h3>Education</h3>
-        <div style="color:var(--muted)"><strong>MTech (Software Systems)</strong>, BITS Pilani — June 2023 – Dec 2026
-          (In progress)</div>
-        <div style="color:var(--muted);margin-top:4px">Passing CGPA: In progress</div>
-        <div style="color:var(--muted);margin-top:10px"><strong>BCA (Software Development)</strong>, Maulana Abul Kalam
-          Azad University of Technology — 2019 – 2022</div>
-        <div style="color:var(--muted);margin-top:4px">Passing CGPA: 9.56</div>
-        <div style="color:var(--muted);margin-top:10px"><strong>Higher Secondary Education</strong>, Memari V.M.
-          Institution (Unit-1) — Passing Score: 8.38</div>
-        <div style="color:var(--muted);margin-top:4px"><strong>Secondary Education</strong>, Memari V.M. Institution
-          (Unit-1) — Passing Score: 9.1</div>
-      </section>
+        <!-- Education -->
+        <div class="m-section">
+          <span class="m-title">Education</span>
 
-      <section class="section">
-        <h3>References</h3>
-        <div style="font-size:13px;color:var(--muted)"><strong>Vikram Lakhotia</strong>, Enterprise Architect — Wipro
+          <div class="edu-row">
+            <div>
+              <h4 class="edu-deg">M.Tech — Software Engineering</h4>
+              <div class="edu-school">BITS Pilani — Work Integrated Learning Program (WILP)</div>
+            </div>
+            <div class="edu-right">
+              <div class="edu-year">Jun 2023 — Dec 2026</div>
+              <div class="edu-score">In progress</div>
+            </div>
+          </div>
+
+          <div class="edu-row">
+            <div>
+              <h4 class="edu-deg">BCA — Bachelor of Computer Applications</h4>
+              <div class="edu-school">Techno India Hooghly College (affiliated with MAKAUT)</div>
+            </div>
+            <div class="edu-right">
+              <div class="edu-year">2019 — 2022</div>
+              <div class="edu-score">CGPA 9.56</div>
+            </div>
+          </div>
         </div>
-        <div style="font-size:13px;color:var(--muted)">Personal Email: <a
-            href="mailto:Vikram.lakhotia@gmail.com">Vikram.lakhotia@gmail.com</a><br>Phone: +91 8017682001</div>
-      </section>
 
-    </main>
-  </div>
+        <!-- Recognition -->
+        <div class="m-section">
+          <span class="m-title">Recognition</span>
+          <div class="award-strip">
+            <div class="award-name">🏆 Europe Excellence — Rising Star Award</div>
+            <div class="award-sub">Wipro · March 2026 — Recognised for zero-downtime automated migration (&sim;10,200 records) and Angular 6 → 18 upgrade delivered within one month.</div>
+          </div>
+        </div>
+
+      </main>
+    </div><!-- .resume -->
+  </div><!-- .page-wrap -->
 </body>
-
 </html>
