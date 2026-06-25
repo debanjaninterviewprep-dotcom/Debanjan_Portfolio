@@ -12,6 +12,7 @@ export const profile = {
   // Vite prepends BASE_URL automatically so this works locally ('/') and
   // on GitHub Pages ('/Debanjan_Portfolio/').
   cvUrl: `${import.meta.env.BASE_URL}cv.html`,
+  resumeUrl: `${import.meta.env.BASE_URL}resume.html`,
   photoUrl: `${import.meta.env.BASE_URL}profile.jpg`,
 };
 

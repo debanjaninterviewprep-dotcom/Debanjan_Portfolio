@@ -1,6 +1,10 @@
+import React, { useState } from 'react';
 import { profile } from '../data/portfolio.js';
+import CvResumeDialog from './CvResumeDialog.jsx';
 
 export default function Hero() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <section
       id="home"
@@ -40,14 +44,12 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={profile.cvUrl}
-                target="_blank"
-                rel="noreferrer"
+              <button
+                onClick={() => setIsDialogOpen(true)}
                 className="btn-primary"
               >
-                View CV
-              </a>
+                View CV / Resume
+              </button>
               <a href="#projects" className="btn-ghost">
                 View Projects
               </a>
@@ -55,6 +57,11 @@ export default function Hero() {
                 Contact Me
               </a>
             </div>
+            
+            <CvResumeDialog 
+              isOpen={isDialogOpen} 
+              onClose={() => setIsDialogOpen(false)} 
+            />
           </div>
 
           {profile.photoUrl && (
