@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Debanjan Mukherjee — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --accent: #1a56db;
+      --accent-light: #dbeafe;
+      --text: #111827;
+      --muted: #4b5563;
+      --light: #6b7280;
+      --divider: #e5e7eb;
+      --bg: #f0f4f8;
+      --paper: #ffffff;
+      --sidebar: #0f1b2d;
+    }
+
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Page wrapper ── */
+    .page-wrap {
+      max-width: 920px;
+      margin: 18px auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 8px;
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+    .print-btn:hover { background: #1e40af; }
+
+    /* ── Resume card ── */
+    .resume {
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* ══ SIDEBAR ══ */
+    .sidebar {
+      background: var(--sidebar);
+      color: #e2e8f0;
+      padding: 22px 16px;
+    }
+
+    .profile-photo {
+      width: 78px; height: 78px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(96,165,250,.25);
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      letter-spacing: .5px;
+      margin: 0;
+    }
+
+    .role-tag {
+      font-size: 11px;
+      color: #93c5fd;
+      font-weight: 500;
+      text-align: center;
+      margin: 4px 0 14px;
+      line-height: 1.4;
+    }
+
+    /* Sidebar sections */
+    .s-section {
+      margin-bottom: 11px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .s-section:first-of-type { border-top: none; padding-top: 0; }
+
+    .s-title {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin: 0 0 6px;
+    }
+
+    .s-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11.5px;
+      color: #cbd5e1;
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .s-line .ico { color: #60a5fa; flex-shrink: 0; width: 13px; text-align: center; font-size: 10px; margin-top: 1px; }
+
+    .sidebar a { color: #7dd3fc; text-decoration: none; }
+    .sidebar a:hover { text-decoration: underline; }
+
+    .tag-group { display: flex; flex-wrap: wrap; gap: 4px; }
+
+    .tag {
+      background: rgba(96,165,250,.1);
+      border: 1px solid rgba(96,165,250,.15);
+      color: #bfdbfe;
+      font-size: 10.5px;
+      font-weight: 500;
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    /* ══ MAIN CONTENT ══ */
+    .main {
+      padding: 20px 22px 16px;
+    }
+
+    /* Section headings */
+    .m-section { margin-bottom: 12px; }
+    .m-section:last-child { margin-bottom: 0; }
+
+    .m-title {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--accent);
+      margin: 0 0 8px;
+      display: block;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Experience row */
+    .exp-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-bottom: 4px;
+    }
+
+    .exp-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .exp-company { color: var(--accent); font-weight: 600; }
+
+    .exp-period {
+      font-size: 11px;
+      color: var(--light);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Bullets */
+    ul.b {
+      margin: 0;
+      padding: 0 0 0 14px;
+      list-style: none;
+    }
+
+    ul.b li {
+      position: relative;
+      padding-left: 3px;
+      margin-bottom: 3px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    ul.b li::before {
+      content: "▸";
+      position: absolute;
+      left: -11px;
+      color: var(--accent);
+      font-size: 9px;
+      top: 1px;
+    }
+
+    /* Skills */
+    .skill-grid { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .skill-chip {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    /* Project blocks */
+    .proj-block { padding-bottom: 8px; border-bottom: 1px dashed var(--divider); }
+    .proj-block:last-child { border-bottom: none; padding-bottom: 0; }
+
+    /* Education table-like rows */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 2px;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+      border-bottom: 1px dashed var(--divider);
+    }
+    .edu-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .edu-deg { font-size: 12px; font-weight: 700; color: var(--text); margin: 0; }
+    .edu-school { font-size: 11px; color: var(--muted); }
+    .edu-right { text-align: right; flex-shrink: 0; }
+    .edu-year { font-size: 11px; color: var(--light); }
+    .edu-score { font-size: 11px; font-weight: 600; color: var(--accent); }
+
+    /* Award strip */
+    .award-strip {
+      padding: 7px 12px;
+      background: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .award-name { font-size: 12px; font-weight: 700; color: #92400e; margin: 0 0 1px; }
+    .award-sub { font-size: 11px; color: #b45309; }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .resume { grid-template-columns: 1fr; }
+      .sidebar { padding: 22px 20px; text-align: center; }
+      .s-line { justify-content: center; }
+      .tag-group { justify-content: center; }
+      .main { padding: 22px 18px; }
+    }
+
+    /* Print */
+    @page {
+      size: A4;
+      margin: 8mm 9mm;
+    }
+
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+      html, body {
+        background: #fff;
+        font-size: 11.5px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .top-bar { display: none !important; }
+
+      .page-wrap {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .resume {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        grid-template-columns: 210px 1fr !important;
+        width: 100%;
+        page-break-inside: avoid;
+      }
+
+      /* ── Sidebar ── */
+      .sidebar {
+        background: #0f1b2d !important;
+        color: #e2e8f0 !important;
+        padding: 17px 13px !important;
+      }
+
+      .profile-photo {
+        width: 68px !important;
+        height: 68px !important;
+        border: 2px solid rgba(96,165,250,.2) !important;
+        margin-bottom: 8px !important;
+      }
+
+      .name { color: #ffffff !important; font-size: 15px !important; }
+      .role-tag { color: #93c5fd !important; font-size: 10.5px !important; margin: 3px 0 10px !important; line-height: 1.38 !important; }
+
+      .s-section {
+        margin-bottom: 9px !important;
+        padding-top: 9px !important;
+      }
+
+      .s-title { color: #60a5fa !important; font-size: 8.5px !important; letter-spacing: 1.5px !important; margin: 0 0 5px !important; }
+      .s-line { color: #cbd5e1 !important; font-size: 10.5px !important; margin-bottom: 3px !important; line-height: 1.33 !important; }
+      .s-line .ico { font-size: 9.5px !important; }
+      .sidebar a { color: #7dd3fc !important; }
+
+      .tag {
+        background: rgba(96,165,250,.12) !important;
+        border-color: rgba(96,165,250,.2) !important;
+        color: #bfdbfe !important;
+        font-size: 9.5px !important;
+        padding: 1.5px 5px !important;
+      }
+
+      .tag-group { gap: 3px !important; }
+
+      /* ── Main ── */
+      .main {
+        padding: 15px 18px 12px !important;
+      }
+
+      .m-section { margin-bottom: 9px !important; }
+      .m-section:last-child { margin-bottom: 0 !important; }
+
+      .m-title {
+        color: #1a56db !important;
+        border-bottom-color: #1a56db !important;
+        font-size: 8.5px !important;
+        letter-spacing: 1.8px !important;
+        padding-bottom: 3px !important;
+        margin: 0 0 6px !important;
+      }
+
+      .summary-text {
+        color: #374151 !important;
+        font-size: 11px !important;
+        line-height: 1.52 !important;
+      }
+
+      .exp-title { color: #111827 !important; font-size: 12px !important; }
+      .exp-company { color: #1a56db !important; }
+      .exp-period { color: #6b7280 !important; font-size: 10.5px !important; }
+      .exp-row { margin-bottom: 3px !important; gap: 2px !important; }
+
+      ul.b { padding-left: 13px !important; }
+      ul.b li {
+        color: #374151 !important;
+        font-size: 11px !important;
+        margin-bottom: 2px !important;
+        line-height: 1.38 !important;
+      }
+
+      .skill-cat { color: #6b7280 !important; }
+      .skill-chip {
+        background: #dbeafe !important;
+        color: #1a56db !important;
+        font-size: 11px !important;
+        padding: 2px 7px !important;
+      }
+      .skill-grid { gap: 5px !important; }
+
+      .edu-deg { color: #111827 !important; font-size: 11.5px !important; }
+      .edu-school { color: #4b5563 !important; font-size: 10.5px !important; }
+      .edu-year { color: #6b7280 !important; font-size: 10.5px !important; }
+      .edu-score { color: #1a56db !important; font-size: 10.5px !important; }
+      .edu-row {
+        margin-bottom: 4px !important;
+        padding-bottom: 4px !important;
+        border-bottom-color: #e5e7eb !important;
+      }
+
+      .award-strip {
+        background: #fffbeb !important;
+        border-left-color: #f59e0b !important;
+        padding: 6px 11px !important;
+      }
+      .award-name { color: #92400e !important; font-size: 11.5px !important; margin: 0 0 2px !important; }
+      .award-sub { color: #b45309 !important; font-size: 10.5px !important; }
+
+      .proj-block { border-bottom-color: #e5e7eb !important; padding-bottom: 5px !important; }
+      .proj-block + .proj-block { margin-top: 5px !important; }
+
+      /* Suppress transforms and shadows */
+      .resume, .main, .sidebar, .skill-chip, .tag, .award-strip {
+        box-shadow: none !important;
+        transform: none !important;
+        filter: none !important;
+        will-change: unset !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrap">
+    <div class="top-bar no-print">
+      <a class="print-btn" href="#" onclick="window.print();return false">⎙ Print / Save as PDF</a>
+    </div>
+
+    <div class="resume">
+
+      <!-- ════ SIDEBAR ════ -->
+      <aside class="sidebar">
+        <img src="profile.jpg" alt="Debanjan Mukherjee" class="profile-photo" onerror="this.style.display='none'">
+        <h1 class="name">Debanjan Mukherjee</h1>
+        <p class="role-tag">Full Stack Developer<br>.NET · Angular · Azure · SQL</p>
+
+        <div class="s-section">
+          <h3 class="s-title">Contact</h3>
+          <div class="s-line"><span class="ico">✉</span> mukherjeedebanjan051@gmail.com</div>
+          <div class="s-line"><span class="ico">☎</span> +91 9800195748</div>
+          <div class="s-line"><span class="ico">◎</span> Kolkata, West Bengal, India</div>
+          <div class="s-line"><span class="ico">in</span>
+            <a href="https://www.linkedin.com/in/debanjanmukherjee-773a3221a" target="_blank" rel="noopener">linkedin/debanjanmukherjee</a>
+          </div>
+          <div class="s-line"><span class="ico">⌘</span>
+            <a href="https://github.com/debanjaninterviewprep-dotcom" target="_blank" rel="noopener">github/debanjanmukherjee</a>
+          </div>
+        </div>
+
+        <div class="s-section">
+          <h3 class="s-title">Core Skills</h3>
+          <div class="tag-group">
+            <span class="tag">.NET Core</span>
+            <span class="tag">C#</span>
+            <span class="tag">Angular</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Azure</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">CI / CD</span>
+            <span class="tag">Microservices</span>
+          </div>
+        </div>
+
+        <div class="s-section">
+          <h3 class="s-title">Certification</h3>
+          <div class="s-line"><span class="ico">⬡</span> Microsoft Certified: Azure Fundamentals</div>
+        </div>
+
+        <div class="s-section">
+          <h3 class="s-title">Languages</h3>
+          <div class="s-line">English (Fluent) · Hindi · Bengali</div>
+        </div>
+
+        <div class="s-section">
+          <h3 class="s-title">Interests</h3>
+          <div class="s-line">Guitar · Cricket · Painting</div>
+        </div>
+      </aside>
+
+      <!-- ════ MAIN ════ -->
+      <main class="main">
+
+        <!-- Summary -->
+        <div class="m-section">
+          <span class="m-title">Professional Summary</span>
+          <p class="summary-text">
+            Full Stack Developer with 4+ years at Wipro building enterprise applications on .NET &amp; Angular. Skilled in REST APIs, cloud deployments, and CI/CD. Practises <strong>AI-augmented development</strong> (GitHub Copilot, ChatGPT, Gemini, Claude) daily. <strong>Europe Excellence — Rising Star (Mar 2026)</strong> award recipient.
+          </p>
+        </div>
+
+        <!-- Experience -->
+        <div class="m-section">
+          <span class="m-title">Experience</span>
+          <div class="exp-row">
+            <h4 class="exp-title">Software Developer &mdash; <span class="exp-company">Wipro</span></h4>
+            <span class="exp-period">Jun 2022 — Present · 4 yrs</span>
+          </div>
+          <ul class="b">
+            <li>Lead developer on the INPAT platform — end-to-end design, development, and delivery on .NET &amp; Angular alongside the solution architect.</li>
+            <li>Infrastructure automation — delivered zero-downtime data migration across platforms with 100% accuracy, validated end-to-end across all environments.</li>
+            <li>Frontend modernisation — led major Angular version upgrades with full refactoring, dependency realignment, and cross-environment validation and drove backend modernisation for improved maintainability, performance, and scalability.</li>
+            <li>Supported production operations — resolved issues rapidly to minimise business disruption.</li>
+            <li>Used GitHub Copilot, ChatGPT, Gemini, and Claude daily — reducing manual effort by up to ~90%.</li>
+          </ul>
+        </div>
+
+        <!-- Projects -->
+        <div class="m-section">
+          <span class="m-title">Projects</span>
+
+          <div class="proj-block">
+            <div class="exp-row">
+              <h4 class="exp-title">INPAT — Enterprise Patching Platform</h4>
+              <span class="exp-period">.NET · Angular · SQL Server · Azure</span>
+            </div>
+            <ul class="b">
+              <li>OS-level patch scheduling — Maintenance Windows, approval workflows, SignalR live feedback, and Teams/Excel reporting.</li>
+            </ul>
+          </div>
+
+          <div class="proj-block" style="margin-top:8px">
+            <div class="exp-row">
+              <h4 class="exp-title">Automated Migration Initiative</h4>
+              <span class="exp-period">.NET · Web API · Ansible Tower · AAP</span>
+            </div>
+            <ul class="b">
+              <li>Migrated ~10,200 host and schedule records with 100% accuracy in an 11-hour zero-downtime production run, fully validated across Dev and QA.</li>
+            </ul>
+          </div>
+
+          <div class="proj-block" style="margin-top:8px">
+            <div class="exp-row">
+              <h4 class="exp-title">Angular Upgrade — INPAT Frontend</h4>
+              <span class="exp-period">Angular 18 · TypeScript · RxJS</span>
+            </div>
+            <ul class="b">
+              <li>Upgraded Angular 6 → 18 in one month — extensive refactoring, dependency realignment, validated across Dev/QA/Prod, yielding a more secure, scalable frontend.</li>
+            </ul>
+          </div>
+
+          <div class="proj-block" style="margin-top:8px">
+            <div class="exp-row">
+              <h4 class="exp-title">BlogSpot — Full Stack Blogging Platform <a href="https://github.com/debanjaninterviewprep-dotcom/BlogSpot" target="_blank" rel="noopener" style="font-size:10px;font-weight:500">[GitHub]</a></h4>
+              <span class="exp-period">.NET · Angular 17 · JWT · SignalR · Docker</span>
+            </div>
+            <ul class="b">
+              <li>Clean Architecture .NET backend — JWT auth, SignalR real-time updates, Angular 17 + Material SPA, SQL Server, Docker Compose for one-command local setup.</li>
+            </ul>
+          </div>
+
+          <div class="proj-block" style="margin-top:8px">
+            <div class="exp-row">
+              <h4 class="exp-title">.NET Full Stack Course <a href="https://github.com/debanjaninterviewprep-dotcom/DotNet-Full-Stack-Course" target="_blank" rel="noopener" style="font-size:10px;font-weight:500">[GitHub]</a></h4>
+              <span class="exp-period">.NET · C# · ASP.NET Web API · Entity Framework</span>
+            </div>
+            <ul class="b">
+              <li>AI-augmented open-source learning track covering C#, ASP.NET Web API, and Entity Framework — designed and built with GitHub Copilot, ChatGPT, Gemini, and Claude.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Skills -->
+        <div class="m-section">
+          <span class="m-title">Technical Skills</span>
+          <div class="skill-grid">
+            <span class="skill-chip">.NET Core / C#</span>
+            <span class="skill-chip">ASP.NET Web API</span>
+            <span class="skill-chip">Entity Framework</span>
+            <span class="skill-chip">Angular</span>
+            <span class="skill-chip">TypeScript</span>
+            <span class="skill-chip">SQL Server</span>
+            <span class="skill-chip">Azure</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">SignalR</span>
+            <span class="skill-chip">PowerShell</span>
+            <span class="skill-chip">Git / Bitbucket</span>
+            <span class="skill-chip">GitHub Copilot</span>
+            <span class="skill-chip">ChatGPT / Gemini</span>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="m-section">
+          <span class="m-title">Education</span>
+
+          <div class="edu-row">
+            <div>
+              <h4 class="edu-deg">M.Tech — Software Engineering</h4>
+              <div class="edu-school">BITS Pilani — Work Integrated Learning Program (WILP)</div>
+            </div>
+            <div class="edu-right">
+              <div class="edu-year">Jun 2023 — Dec 2026</div>
+              <div class="edu-score">In progress</div>
+            </div>
+          </div>
+
+          <div class="edu-row">
+            <div>
+              <h4 class="edu-deg">BCA — Bachelor of Computer Applications</h4>
+              <div class="edu-school">Techno India Hooghly College (affiliated with MAKAUT)</div>
+            </div>
+            <div class="edu-right">
+              <div class="edu-year">2019 — 2022</div>
+              <div class="edu-score">CGPA 9.56</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recognition -->
+        <div class="m-section">
+          <span class="m-title">Recognition</span>
+          <div class="award-strip">
+            <div class="award-name">🏆 Europe Excellence — Rising Star Award</div>
+            <div class="award-sub">Wipro · March 2026 — Recognised for zero-downtime automated migration (&sim;10,200 records) and Angular 6 → 18 upgrade delivered within one month.</div>
+          </div>
+        </div>
+
+      </main>
+    </div><!-- .resume -->
+  </div><!-- .page-wrap -->
+</body>
+</html>
