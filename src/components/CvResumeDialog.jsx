@@ -4,29 +4,22 @@ import { profile } from '../data/portfolio';
 // Assumes we have profile.cvUrl and profile.resumeUrl
 
 export default function CvResumeDialog({ isOpen, onClose }) {
-  // Lock scroll at current position so the page doesn't jump to top
+  // Lock scroll when open; restore exact position on close
   useEffect(() => {
-    if (isOpen) {
-      const scrollY = window.scrollY;
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-    } else {
-      const scrollY = document.body.style.top;
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
-    }
+    if (!isOpen) return;
+
+    const scrollY = window.scrollY;
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+
     return () => {
-      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.width = '';
-      if (scrollY) window.scrollTo(0, parseInt(scrollY) * -1);
+      window.scrollTo(0, scrollY);
     };
   }, [isOpen]);
 
