@@ -4,15 +4,29 @@ import { profile } from '../data/portfolio';
 // Assumes we have profile.cvUrl and profile.resumeUrl
 
 export default function CvResumeDialog({ isOpen, onClose }) {
-  // Prevent scrolling on body when dialog is open
+  // Lock scroll at current position so the page doesn't jump to top
   useEffect(() => {
     if (isOpen) {
+      const scrollY = window.scrollY;
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
     } else {
-      document.body.style.overflow = 'auto';
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
     return () => {
-      document.body.style.overflow = 'auto';
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      if (scrollY) window.scrollTo(0, parseInt(scrollY) * -1);
     };
   }, [isOpen]);
 
