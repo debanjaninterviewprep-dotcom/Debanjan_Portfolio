@@ -107,6 +107,7 @@ export const projects = [
       'Docker',
     ],
     link: 'https://github.com/debanjaninterviewprep-dotcom/BlogSpot',
+    liveUrl: 'https://blog-spot-smoky.vercel.app/',
     achievements: [
       'Implemented Clean Architecture across Domain, Application, Infrastructure, and API layers.',
       'JWT-secured REST APIs consumed by an Angular 17 SPA with Angular Material UI.',

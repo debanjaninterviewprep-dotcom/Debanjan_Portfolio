@@ -35,17 +35,30 @@ export default function Projects() {
               ))}
             </div>
 
-            {p.link && (
-              <div className="mt-5">
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 dark:text-brand-400 hover:underline"
-                >
-                  View on GitHub
-                  <span aria-hidden="true">→</span>
-                </a>
+            {(p.link || p.liveUrl) && (
+              <div className="mt-5 flex flex-wrap gap-4">
+                {p.link && (
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 dark:text-brand-400 hover:underline"
+                  >
+                    View on GitHub
+                    <span aria-hidden="true">→</span>
+                  </a>
+                )}
+                {p.liveUrl && (
+                  <a
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 dark:text-brand-400 hover:underline"
+                  >
+                    Live Site
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
               </div>
             )}
           </article>
