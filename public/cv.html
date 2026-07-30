@@ -504,26 +504,8 @@
       font-weight: 500;
     }
 
-    /* Button */
-    .print-btn {
-      background: var(--accent);
-      color: white;
-      padding: 8px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 13px;
-      transition: 0.2s;
-    }
-
-    .print-btn:hover {
-      background: #1d4ed8;
-    }
-
     .top-actions {
-      display: flex;
-      justify-content: flex-end;
-      margin: 20px auto 0;
-      max-width: 1000px;
+      display: none;
     }
 
     /* Responsive */
@@ -578,9 +560,6 @@
 </head>
 
 <body>
-  <div class="top-actions no-print" style="max-width:980px;margin:18px auto 0;display:flex;justify-content:flex-end">
-    <a class="print-btn" href="#" onclick="window.print();return false">Print / Save as PDF</a>
-  </div>
 
   <div class="wrap" role="document">
     <aside class="sidebar">
