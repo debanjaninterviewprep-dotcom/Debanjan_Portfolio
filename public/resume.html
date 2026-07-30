@@ -426,6 +426,11 @@
         filter: none !important;
         will-change: unset !important;
       }
+
+      /* Ensure all links are visually identifiable and clickable in PDF */
+      a[href] { text-decoration: underline !important; }
+      .main a[href] { color: #1a56db !important; text-decoration: underline !important; }
+      .sidebar a[href] { color: #7dd3fc !important; text-decoration: underline !important; }
     }
   </style>
 </head>

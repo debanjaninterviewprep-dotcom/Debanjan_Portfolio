@@ -549,11 +549,30 @@
 
       .wrap {
         box-shadow: none;
+        max-width: 100%;
+        margin: 0 auto;
+        border-radius: 0;
       }
 
       .top-actions {
         display: none;
       }
+
+      /* Preserve sidebar dark background and all colors in print */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .sidebar {
+        background: linear-gradient(180deg, #0f172a, #1e293b) !important;
+        color: #e2e8f0 !important;
+      }
+
+      /* Ensure all links are visually identifiable and clickable in PDF */
+      a[href] { text-decoration: underline !important; }
+      .main a[href] { color: #2563eb !important; text-decoration: underline !important; }
+      .sidebar a[href] { color: #93c5fd !important; text-decoration: underline !important; }
     }
   </style>
 </head>
