@@ -149,3 +149,18 @@ export const achievements = [
     certificateUrl: `${import.meta.env.BASE_URL}rising-star-award.pdf`,
   },
 ];
+
+export const certifications = [
+  {
+    title: 'Microsoft Azure Fundamentals',
+    issuer: 'Microsoft',
+    certification: 'AZ-900',
+    description: 'Foundational knowledge of cloud services and Azure basics.',
+  },
+  {
+    title: 'Foundational C# with Microsoft',
+    issuer: 'Microsoft',
+    description: 'Core C# language fundamentals and object-oriented programming principles.',
+    certificateUrl: 'https://www.freecodecamp.org/certification/fcc-7ed24a01-380a-4fbe-b301-233b0b9dc598/foundational-c-sharp-with-microsoft',
+  },
+];

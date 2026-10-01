@@ -219,6 +219,24 @@
       border-radius: 3px;
     }
 
+    /* Microsoft Certification Highlight */
+    .cert-microsoft {
+      color: #111827;
+      font-weight: 700;
+    }
+
+    .cert-microsoft::before {
+      content: "🎯 ";
+      margin-right: 4px;
+    }
+
+    .cert-info {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
     /* Project blocks */
     .proj-block { padding-bottom: 8px; border-bottom: 1px dashed var(--divider); }
     .proj-block:last-child { border-bottom: none; padding-bottom: 0; }
@@ -395,6 +413,22 @@
       .proj-block { border-bottom-color: #e5e7eb !important; padding-bottom: 5px !important; }
       .proj-block + .proj-block { margin-top: 5px !important; }
 
+      .cert-microsoft {
+        color: #111827 !important;
+        font-weight: 700 !important;
+        display: inline !important;
+        background: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+      }
+
+      .cert-info {
+        font-size: 10px !important;
+        color: #6b7280 !important;
+        margin-top: 1px !important;
+        line-height: 1.35 !important;
+      }
+
       /* Suppress transforms and shadows */
       .resume, .main, .sidebar, .skill-chip, .tag, .award-strip {
         box-shadow: none !important;
@@ -437,20 +471,29 @@
         <div class="s-section">
           <h3 class="s-title">Core Skills</h3>
           <div class="tag-group">
-            <span class="tag">.NET Core</span>
-            <span class="tag">C#</span>
+            <span class="tag">.NET Core / C#</span>
+            <span class="tag">ASP.NET Web API</span>
+            <span class="tag">Entity Framework</span>
             <span class="tag">Angular</span>
+            <span class="tag">TypeScript</span>
             <span class="tag">SQL Server</span>
             <span class="tag">Azure</span>
+            <span class="tag">Docker</span>
+            <span class="tag">SignalR</span>
             <span class="tag">REST APIs</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">Git / Bitbucket</span>
+            <span class="tag">GitHub Copilot</span>
+            <span class="tag">ChatGPT / Gemini</span>
             <span class="tag">CI / CD</span>
             <span class="tag">Microservices</span>
           </div>
         </div>
 
         <div class="s-section">
-          <h3 class="s-title">Certification</h3>
-          <div class="s-line"><span class="ico">⬡</span> Microsoft Certified: Azure Fundamentals</div>
+          <h3 class="s-title">Certifications</h3>
+          <div class="s-line"><span class="ico">⬡</span> <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals" target="_blank" rel="noopener">AZ-900: Azure Fundamentals</a></div>
+          <div class="s-line"><span class="ico">⬡</span> <a href="https://www.freecodecamp.org/certification/fcc-7ed24a01-380a-4fbe-b301-233b0b9dc598/foundational-c-sharp-with-microsoft" target="_blank" rel="noopener">Foundational C# with Microsoft</a></div>
         </div>
 
         <div class="s-section">
@@ -469,6 +512,10 @@
           <div class="s-line" style="font-size:10.5px;padding-left:19px">Enterprise Architect, CTS</div>
           <div class="s-line"><span class="ico">✉</span> <a href="mailto:Vikram.lakhotia@gmail.com">Vikram.lakhotia@gmail.com</a></div>
           <div class="s-line"><span class="ico">☎</span> +91 8017682001</div>
+          <div class="s-line" style="margin-top:7px"><span class="ico">★</span> Tapasa Ranjan Sahoo</div>
+          <div class="s-line" style="font-size:10.5px;padding-left:19px">Enterprise Architect, Wipro</div>
+          <div class="s-line"><span class="ico">✉</span> <a href="mailto:tapasa.sahoo@wipro.com">tapasa.sahoo@wipro.com</a></div>
+          <div class="s-line"><span class="ico">☎</span> +91 8249335481</div>
         </div>
       </aside>
 
@@ -555,23 +602,21 @@
 
         </div>
 
-        <!-- Skills -->
+        <!-- Certifications -->
         <div class="m-section">
-          <span class="m-title">Technical Skills</span>
-          <div class="skill-grid">
-            <span class="skill-chip">.NET Core / C#</span>
-            <span class="skill-chip">ASP.NET Web API</span>
-            <span class="skill-chip">Entity Framework</span>
-            <span class="skill-chip">Angular</span>
-            <span class="skill-chip">TypeScript</span>
-            <span class="skill-chip">SQL Server</span>
-            <span class="skill-chip">Azure</span>
-            <span class="skill-chip">Docker</span>
-            <span class="skill-chip">SignalR</span>
-            <span class="skill-chip">PowerShell</span>
-            <span class="skill-chip">Git / Bitbucket</span>
-            <span class="skill-chip">GitHub Copilot</span>
-            <span class="skill-chip">ChatGPT / Gemini</span>
+          <span class="m-title">Certifications</span>
+          <div class="proj-block">
+            <div class="exp-row">
+              <h4 class="exp-title"><a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals" target="_blank" rel="noopener" style="text-decoration:none"><span class="cert-microsoft">Azure Fundamentals - AZ 900, Microsoft</span></a></h4>
+            </div>
+            <div class="cert-info">Mar 2025 - Mar 2030</div>
+          </div>
+          <div class="proj-block" style="margin-top:6px">
+            <div class="exp-row">
+              <h4 class="exp-title"><a href="https://www.freecodecamp.org/certification/fcc-7ed24a01-380a-4fbe-b301-233b0b9dc598/foundational-c-sharp-with-microsoft" target="_blank" rel="noopener" style="text-decoration:none"><span class="cert-microsoft">Foundational C# with Microsoft, Microsoft</span></a></h4>
+            </div>
+            <div class="cert-info">Sep 2026 - Sep 2031</div>
+            <div class="cert-info" style="margin-top:1px">Skill and Proficiency level: C#</div>
           </div>
         </div>
 
