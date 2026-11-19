@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { profile } from '../data/portfolio';
 
 // Assumes we have profile.cvUrl and profile.resumeUrl
@@ -19,14 +20,18 @@ export default function CvResumeDialog({ isOpen, onClose }) {
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.width = '';
-      window.scrollTo(0, scrollY);
+      // 'instant' bypasses the global `scroll-behavior: smooth`, which would otherwise
+      // visibly scroll the page back down from the top after closing.
+      window.scrollTo({ top: scrollY, left: 0, behavior: 'instant' });
     };
   }, [isOpen]);
 
   if (!isOpen) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-0">
+  // Portal to <body>: the Hero ancestor has a CSS transform (animate-fade-up), which would
+  // otherwise make `fixed` position relative to the Hero instead of the viewport.
+  return createPortal(
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-0">
       {/* Backdrop */}
       <div 
         className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity" 
@@ -85,6 +90,7 @@ export default function CvResumeDialog({ isOpen, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
