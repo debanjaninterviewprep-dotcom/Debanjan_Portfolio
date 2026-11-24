@@ -270,6 +270,10 @@
       line-height: 1.4;
     }
 
+    /* Compact one-line certification rows (date right-aligned) keep the resume on one A4 page */
+    .cert-row + .cert-row { margin-top: 5px; }
+    .cert-row .exp-row { margin-bottom: 0; }
+
     /* Project blocks */
     .proj-block { padding-bottom: 8px; border-bottom: 1px dashed var(--divider); }
     .proj-block:last-child { border-bottom: none; padding-bottom: 0; }
@@ -464,6 +468,9 @@
         line-height: 1.35 !important;
       }
 
+      .cert-row + .cert-row { margin-top: 4px !important; }
+      .cert-row .exp-row { margin-bottom: 0 !important; }
+
       /* Suppress transforms and shadows */
       .resume, .main, .sidebar, .skill-chip, .tag, .award-strip {
         box-shadow: none !important;
@@ -536,6 +543,7 @@
           <h3 class="s-title">Certifications</h3>
           <div class="s-line"><span class="ico">⬡</span> <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals" target="_blank" rel="noopener">AZ-900: Azure Fundamentals</a></div>
           <div class="s-line"><span class="ico">⬡</span> <a href="https://www.freecodecamp.org/certification/fcc-7ed24a01-380a-4fbe-b301-233b0b9dc598/foundational-c-sharp-with-microsoft" target="_blank" rel="noopener">Foundational C# with Microsoft</a></div>
+          <div class="s-line"><span class="ico">⬡</span> <a href="https://simpli-web.app.link/e/2Uhm2JRik8b" target="_blank" rel="noopener">Microsoft Copilot Studio</a></div>
         </div>
 
         <div class="s-section">
@@ -647,18 +655,25 @@
         <!-- Certifications -->
         <div class="m-section">
           <span class="m-title">Certifications</span>
-          <div class="proj-block">
+          <div class="cert-row">
             <div class="exp-row">
               <h4 class="exp-title"><a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals" target="_blank" rel="noopener" style="text-decoration:none"><span class="cert-microsoft">Azure Fundamentals - AZ 900, Microsoft</span></a></h4>
+              <span class="exp-period">Mar 2025 - Mar 2030</span>
             </div>
-            <div class="cert-info">Mar 2025 - Mar 2030</div>
           </div>
-          <div class="proj-block" style="margin-top:6px">
+          <div class="cert-row">
             <div class="exp-row">
               <h4 class="exp-title"><a href="https://www.freecodecamp.org/certification/fcc-7ed24a01-380a-4fbe-b301-233b0b9dc598/foundational-c-sharp-with-microsoft" target="_blank" rel="noopener" style="text-decoration:none"><span class="cert-microsoft">Foundational C# with Microsoft, Microsoft</span></a></h4>
+              <span class="exp-period">Sep 2026 - Sep 2031</span>
             </div>
-            <div class="cert-info">Sep 2026 - Sep 2031</div>
-            <div class="cert-info" style="margin-top:1px">Skill and Proficiency level: C#</div>
+            <div class="cert-info">Skill and Proficiency level: C#</div>
+          </div>
+          <div class="cert-row">
+            <div class="exp-row">
+              <h4 class="exp-title"><a href="https://simpli-web.app.link/e/2Uhm2JRik8b" target="_blank" rel="noopener" style="text-decoration:none"><span class="cert-microsoft">Microsoft Copilot Studio, Simplilearn SkillUp</span></a></h4>
+              <span class="exp-period">Issued Nov 2026</span>
+            </div>
+            <div class="cert-info">Powered by Microsoft · Certificate code: 11074358</div>
           </div>
         </div>
 

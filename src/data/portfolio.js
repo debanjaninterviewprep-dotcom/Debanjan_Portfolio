@@ -163,4 +163,11 @@ export const certifications = [
     description: 'Core C# language fundamentals and object-oriented programming principles.',
     certificateUrl: 'https://www.freecodecamp.org/certification/fcc-7ed24a01-380a-4fbe-b301-233b0b9dc598/foundational-c-sharp-with-microsoft',
   },
+  {
+    title: 'Microsoft Copilot Studio',
+    issuer: 'Simplilearn SkillUp · Powered by Microsoft',
+    description:
+      'Completed the Microsoft Copilot Studio course — building AI-powered copilots and agents on the Microsoft Power Platform.',
+    certificateUrl: 'https://simpli-web.app.link/e/2Uhm2JRik8b',
+  },
 ];
